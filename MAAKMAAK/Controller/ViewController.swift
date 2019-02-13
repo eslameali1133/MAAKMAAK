@@ -1,14 +1,14 @@
 //
 //  ViewController.swift
-//  MAAKMAAK
+//  MaakMaak
 //
-//  Created by apple on 2/13/19.
-//  Copyright © 2019 Eslammaakmaak. All rights reserved.
+//  Created by M on 2/5/19.
+//  Copyright © 2019 M. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: MYViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

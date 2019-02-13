@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  MAAKMAAK
+//  MaakMaakAPP
 //
-//  Created by apple on 2/13/19.
-//  Copyright © 2019 Eslammaakmaak. All rights reserved.
+//  Created by apple on 2/9/19.
+//  Copyright © 2019 maakmaak. All rights reserved.
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+            IQKeyboardManager.shared.enable=true
         return true
     }
 
