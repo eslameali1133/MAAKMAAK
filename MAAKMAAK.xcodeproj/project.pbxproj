@@ -60,6 +60,8 @@
 		187BC79E221458C40083C097 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 187BC764221458C30083C097 /* Localizable.strings */; };
 		187BC79F221458C40083C097 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 187BC767221458C30083C097 /* lang-en.json */; };
 		187BC7A0221458C40083C097 /* lang-ar.json in Resources */ = {isa = PBXBuildFile; fileRef = 187BC769221458C30083C097 /* lang-ar.json */; };
+		187BC7A22214DA9A0083C097 /* AMCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC7A12214DA9A0083C097 /* AMCircleImageView.swift */; };
+		187BC7A42214E74A0083C097 /* ChooseLocationToShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC7A32214E74A0083C097 /* ChooseLocationToShareViewController.swift */; };
 		52C365343B7330D549DD5596 /* Pods_MAAKMAAK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECF4095C7EE059443F1CF87 /* Pods_MAAKMAAK.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +125,8 @@
 		187BC767221458C30083C097 /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
 		187BC768221458C30083C097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		187BC769221458C30083C097 /* lang-ar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ar.json"; sourceTree = "<group>"; };
+		187BC7A12214DA9A0083C097 /* AMCircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMCircleImageView.swift; sourceTree = "<group>"; };
+		187BC7A32214E74A0083C097 /* ChooseLocationToShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLocationToShareViewController.swift; sourceTree = "<group>"; };
 		1A399637E1C815F20BB83E69 /* Pods-MAAKMAAK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAAKMAAK.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK.release.xcconfig"; sourceTree = "<group>"; };
 		6DB7DDEF4425873D8252547E /* Pods-MAAKMAAK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAAKMAAK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK.debug.xcconfig"; sourceTree = "<group>"; };
 		FECF4095C7EE059443F1CF87 /* Pods_MAAKMAAK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAAKMAAK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +217,7 @@
 		187BC72A221458C00083C097 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				187BC7A12214DA9A0083C097 /* AMCircleImageView.swift */,
 				187BC72B221458C00083C097 /* LanguageManager.swift */,
 				187BC72C221458C00083C097 /* Location */,
 				187BC72E221458C00083C097 /* Enum */,
@@ -332,6 +337,7 @@
 		187BC74F221458C10083C097 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				187BC7A32214E74A0083C097 /* ChooseLocationToShareViewController.swift */,
 				187BC750221458C10083C097 /* ProfileVC.swift */,
 				187BC751221458C10083C097 /* ForgetPasswordVC.swift */,
 				187BC752221458C10083C097 /* ViewController.swift */,
@@ -567,6 +573,8 @@
 			files = (
 				187BC76D221458C40083C097 /* Ex+TableView.swift in Sources */,
 				187BC76A221458C40083C097 /* UIView.swift in Sources */,
+				187BC7A22214DA9A0083C097 /* AMCircleImageView.swift in Sources */,
+				187BC7A42214E74A0083C097 /* ChooseLocationToShareViewController.swift in Sources */,
 				187BC788221458C40083C097 /* APIConstants.swift in Sources */,
 				187BC780221458C40083C097 /* LocalizableTextField.swift in Sources */,
 				187BC78E221458C40083C097 /* ForgetPasswordVC.swift in Sources */,
