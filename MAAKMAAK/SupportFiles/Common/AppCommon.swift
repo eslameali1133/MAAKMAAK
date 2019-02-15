@@ -47,11 +47,15 @@ class AppCommon: UIViewController {
 
     
     
-//    func showHome(vc: UIViewController) {
-//        let sb = UIStoryboard(name: "SideMenu", bundle: nil)
-//        let controller = sb.instantiateViewController(withIdentifier: "SWRevealViewController")
-//        vc.navigationController?.present(controller, animated: false)
-//    }
+    func GotoVerificationcode(vc: UIViewController,UserID: String,userType:Bool,Mobile:String) {
+        let sb = UIStoryboard(name: "Authstory", bundle: nil)
+        let controller = sb.instantiateViewController(withIdentifier: "VerifyCodeVC") as! VerifyCodeVC
+        
+        controller.UserID = UserID
+        controller.UserType = userType
+        controller.mobile = Mobile
+        vc.navigationController?.pushViewController(controller, animated: true)
+    }
 //
 //    func showLogin(vc: UIViewController) {
 //        let sb = UIStoryboard(name: "Login", bundle: nil)
