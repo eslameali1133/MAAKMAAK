@@ -10,6 +10,10 @@ import UIKit
 
 class VerifyCodeVC: UIViewController {
 
+    var UserID = ""
+    var UserType = false
+    var mobile = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

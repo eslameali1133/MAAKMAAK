@@ -314,7 +314,7 @@
                                                     <constraint firstAttribute="height" constant="150" id="QHH-xY-xJY"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="P45-TB-pWB" customClass="CosmosView" customModule="Cosmos">
+                                            <view userInteractionEnabled="NO" contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="P45-TB-pWB" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="89" y="180" width="177.5" height="22.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -335,7 +335,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Th7-d1-dmP" userLabel="name">
                                                         <rect key="frame" x="0.0" y="0.0" width="319.5" height="40.5"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="name" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7X-w1-vZk">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7X-w1-vZk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="319.5" height="28.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -434,7 +434,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="ConfPassword"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Chosecountry"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McL-fy-4Eo">
@@ -465,7 +465,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="ConfPassword"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="ChoseCity"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8G8-mv-eL2">
@@ -496,7 +496,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="ConfPassword"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="ChoseArea"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHM-5f-ckO">
@@ -627,6 +627,9 @@
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="MapImageView" destination="tMU-c0-D0O" id="X1r-zO-rfh"/>
+                        <outlet property="TXTArea" destination="Rwc-Fe-lm0" id="jOE-pH-wfh"/>
+                        <outlet property="TXTCity" destination="tnv-q0-XKc" id="hbk-pH-gOm"/>
+                        <outlet property="TXTCountry" destination="IeE-pW-gmc" id="ZO0-Ja-Sqx"/>
                         <outlet property="imageProfile" destination="9yx-gF-p2O" id="2qt-Qg-LfO"/>
                     </connections>
                 </viewController>

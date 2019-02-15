@@ -151,7 +151,10 @@ class HttpHelper{
     
     
     public func requestWithBody (url:String,method:HTTPMethod,parameters:Parameters=[:],tag:Int,header:HTTPHeaders?) {
+        
+        print(url)
         Alamofire.request(url , method: method, parameters: parameters, encoding: JSONEncoding.default,headers: header).responseJSON { (response) in
+            debugPrint(response)
             if response.response == nil {
                 self.delegate?.receivedErrorWithStatusCode(statusCode: statusCode.NOT_FOUND)
                 return
