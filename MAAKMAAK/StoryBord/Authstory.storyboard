@@ -13,7 +13,7 @@
         <!--Register View Controller-->
         <scene sceneID="jV7-tD-i5R">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lB1-Hv-bZW" customClass="RegisterViewController" customModule="MaakMaakAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lB1-Hv-bZW" customClass="RegisterViewController" customModule="MAAKMAAK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K4F-dY-4Hl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="38.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Name"/>
                                                 </userDefinedRuntimeAttributes>
@@ -99,7 +99,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="39"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Password"/>
                                                 </userDefinedRuntimeAttributes>
@@ -130,7 +130,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="38.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="ConfPassword"/>
                                                 </userDefinedRuntimeAttributes>
@@ -163,6 +163,17 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CsN-Mi-xUW">
                                                         <rect key="frame" x="0.0" y="0.5" width="159.5" height="50"/>
                                                         <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEU-lz-oMf">
+                                                                <rect key="frame" x="93.5" y="13" width="24" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="24" id="dZW-Y7-iFJ"/>
+                                                                    <constraint firstAttribute="height" constant="24" id="t31-bs-6Pg"/>
+                                                                </constraints>
+                                                                <state key="normal" image="radio-on-buttonActive"/>
+                                                                <connections>
+                                                                    <action selector="CarOwnerSelect:" destination="lB1-Hv-bZW" eventType="touchUpInside" id="aN6-cg-3xG"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtA-CZ-3rZ">
                                                                 <rect key="frame" x="5" y="14.5" width="78.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -172,17 +183,6 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Carowner"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEU-lz-oMf">
-                                                                <rect key="frame" x="93.5" y="13" width="24" height="24"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="24" id="dZW-Y7-iFJ"/>
-                                                                    <constraint firstAttribute="height" constant="24" id="t31-bs-6Pg"/>
-                                                                </constraints>
-                                                                <state key="normal" image="radio-on-buttonActive"/>
-                                                                <connections>
-                                                                    <action selector="CarOwnerSelect:" destination="lB1-Hv-bZW" eventType="touchUpInside" id="bSG-8U-Xic"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -195,6 +195,17 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sq-9O-UOk">
                                                         <rect key="frame" x="159.5" y="0.5" width="159.5" height="50"/>
                                                         <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph0-HV-0gt">
+                                                                <rect key="frame" x="93.5" y="13" width="24" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="24" id="IZW-aC-xMP"/>
+                                                                    <constraint firstAttribute="width" constant="24" id="euL-0P-OdF"/>
+                                                                </constraints>
+                                                                <state key="normal" image="radio-on-buttonmotActive"/>
+                                                                <connections>
+                                                                    <action selector="ServieProviderSelecd:" destination="lB1-Hv-bZW" eventType="touchUpInside" id="ydh-qF-HXA"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbO-wI-CiE">
                                                                 <rect key="frame" x="5" y="14.5" width="78.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -204,17 +215,6 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="servprovder"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph0-HV-0gt">
-                                                                <rect key="frame" x="93.5" y="13" width="24" height="24"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="24" id="IZW-aC-xMP"/>
-                                                                    <constraint firstAttribute="width" constant="24" id="euL-0P-OdF"/>
-                                                                </constraints>
-                                                                <state key="normal" image="radio-on-buttonmotActive"/>
-                                                                <connections>
-                                                                    <action selector="ServieProviderSelecd:" destination="lB1-Hv-bZW" eventType="touchUpInside" id="SJH-qi-xj1"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -249,22 +249,46 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="register"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="fJC-ul-Esg" kind="push" id="YQ3-ix-xcv"/>
+                                    <action selector="Register:" destination="lB1-Hv-bZW" eventType="touchUpInside" id="aEL-ii-7ja"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1x-4p-fWf" userLabel="carowner">
+                                <rect key="frame" x="28" y="430" width="159.5" height="50"/>
+                                <connections>
+                                    <action selector="CarOwnerSelect:" destination="lB1-Hv-bZW" eventType="touchUpInside" id="Od5-jh-0QO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRn-2K-m1j">
+                                <rect key="frame" x="187.5" y="430" width="159.5" height="50"/>
+                                <connections>
+                                    <action selector="ServieProviderSelecd:" destination="lB1-Hv-bZW" eventType="touchUpInside" id="55Z-AY-d2J"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96854609250000001" green="0.96868139509999995" blue="0.96850329639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JrY-2j-sEf" firstAttribute="centerX" secondItem="5Sn-xN-qo5" secondAttribute="centerX" id="0ty-RS-Gwl"/>
+                            <constraint firstItem="IRn-2K-m1j" firstAttribute="centerY" secondItem="6sq-9O-UOk" secondAttribute="centerY" id="3Di-LC-sQz"/>
+                            <constraint firstItem="IRn-2K-m1j" firstAttribute="bottom" secondItem="6sq-9O-UOk" secondAttribute="bottom" id="4Sf-Af-yb7"/>
                             <constraint firstItem="JrY-2j-sEf" firstAttribute="top" secondItem="vJ4-oW-0pg" secondAttribute="bottom" constant="23" id="5bI-uw-Wud"/>
+                            <constraint firstItem="IRn-2K-m1j" firstAttribute="top" secondItem="6sq-9O-UOk" secondAttribute="top" id="6dK-zF-wOd"/>
                             <constraint firstItem="HAV-Ma-CSr" firstAttribute="centerX" secondItem="5Sn-xN-qo5" secondAttribute="centerX" id="FAm-Bl-b4M"/>
+                            <constraint firstItem="S1x-4p-fWf" firstAttribute="centerY" secondItem="CsN-Mi-xUW" secondAttribute="centerY" id="Gh5-e2-t7P"/>
                             <constraint firstItem="HAV-Ma-CSr" firstAttribute="height" secondItem="K4F-dY-4Hl" secondAttribute="height" multiplier="0.07" id="NOR-cp-87r"/>
+                            <constraint firstItem="IRn-2K-m1j" firstAttribute="centerX" secondItem="6sq-9O-UOk" secondAttribute="centerX" id="NtI-mr-t6e"/>
+                            <constraint firstItem="S1x-4p-fWf" firstAttribute="bottom" secondItem="CsN-Mi-xUW" secondAttribute="bottom" id="S9o-RC-8iB"/>
+                            <constraint firstItem="S1x-4p-fWf" firstAttribute="top" secondItem="CsN-Mi-xUW" secondAttribute="top" id="T8f-Pa-v44"/>
+                            <constraint firstItem="S1x-4p-fWf" firstAttribute="trailing" secondItem="CsN-Mi-xUW" secondAttribute="trailing" id="WGp-f6-Wfa"/>
                             <constraint firstItem="JrY-2j-sEf" firstAttribute="height" secondItem="K4F-dY-4Hl" secondAttribute="height" multiplier="0.5" id="WM5-ty-oN5"/>
                             <constraint firstItem="HAV-Ma-CSr" firstAttribute="top" secondItem="JrY-2j-sEf" secondAttribute="bottom" constant="20" id="XM1-KT-Vb2"/>
                             <constraint firstItem="JrY-2j-sEf" firstAttribute="width" secondItem="K4F-dY-4Hl" secondAttribute="width" multiplier="0.85" id="XUf-Ap-j3D"/>
+                            <constraint firstItem="S1x-4p-fWf" firstAttribute="leading" secondItem="CsN-Mi-xUW" secondAttribute="leading" id="ZFS-Qr-uGH"/>
                             <constraint firstItem="JrY-2j-sEf" firstAttribute="centerY" secondItem="K4F-dY-4Hl" secondAttribute="centerY" constant="-20" id="aUe-rk-yBy"/>
                             <constraint firstItem="HAV-Ma-CSr" firstAttribute="width" secondItem="K4F-dY-4Hl" secondAttribute="width" multiplier="0.7" id="bEw-Yh-1Cb"/>
                             <constraint firstItem="vJ4-oW-0pg" firstAttribute="centerX" secondItem="K4F-dY-4Hl" secondAttribute="centerX" id="ewx-ex-fGt"/>
+                            <constraint firstItem="S1x-4p-fWf" firstAttribute="centerX" secondItem="CsN-Mi-xUW" secondAttribute="centerX" id="jzg-Bv-kyP"/>
+                            <constraint firstItem="IRn-2K-m1j" firstAttribute="trailing" secondItem="6sq-9O-UOk" secondAttribute="trailing" id="rje-ro-ZHA"/>
+                            <constraint firstItem="IRn-2K-m1j" firstAttribute="leading" secondItem="6sq-9O-UOk" secondAttribute="leading" id="xyo-ab-vgY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Sn-xN-qo5"/>
                     </view>
@@ -272,6 +296,10 @@
                     <connections>
                         <outlet property="RidoBtnCar" destination="gEU-lz-oMf" id="SEG-6s-QLF"/>
                         <outlet property="RidoBtnProvider" destination="Ph0-HV-0gt" id="uPj-SJ-nE0"/>
+                        <outlet property="TXTConfirm" destination="AoV-N3-qf8" id="Po2-Wa-TMh"/>
+                        <outlet property="TXTMobil" destination="R6t-bU-f2L" id="tMf-kV-Vog"/>
+                        <outlet property="TXTName" destination="LqD-K9-fkQ" id="3Uw-5U-sI1"/>
+                        <outlet property="TXTPassword" destination="q1h-YX-lpP" id="0WU-k6-Jkk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfh-vu-f49" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,7 +309,7 @@
         <!--Login View Controller-->
         <scene sceneID="l5w-DI-xvU">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uT0-BU-EFs" customClass="LoginViewController" customModule="MaakMaakAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uT0-BU-EFs" customClass="LoginViewController" customModule="MAAKMAAK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="739-eO-Ish">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -483,7 +511,7 @@
         <!--Forget PasswordVC-->
         <scene sceneID="dsK-UM-nRh">
             <objects>
-                <viewController storyboardIdentifier="ForgetPasswordVC" id="utQ-7w-jD0" customClass="ForgetPasswordVC" customModule="MaakMaakAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgetPasswordVC" id="utQ-7w-jD0" customClass="ForgetPasswordVC" customModule="MAAKMAAK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n2h-Yl-Oko">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -600,7 +628,7 @@
         <!--Verify CodeVC-->
         <scene sceneID="Vxx-kk-IP4">
             <objects>
-                <viewController storyboardIdentifier="VerifyCodeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fJC-ul-Esg" customClass="VerifyCodeVC" customModule="MaakMaakAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerifyCodeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fJC-ul-Esg" customClass="VerifyCodeVC" customModule="MAAKMAAK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BCw-cS-722">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
