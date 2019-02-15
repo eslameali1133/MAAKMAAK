@@ -9,7 +9,8 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Firebase
-
+import GooglePlaces
+import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
