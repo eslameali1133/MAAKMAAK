@@ -19,10 +19,10 @@ class RequestsVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     func getRequests(){
-        requestsData?.append(allRequests(sectionTitle: "Accedent1",section: 0,collapsed :false, request: [request(name: "Taha", brand: "Mercedes", service: "Car Moing", time: "9/9/2018 2:00")]))
-        requestsData?.append(allRequests(sectionTitle: "Accedent2",section : 1,collapsed :false, request: [request(name: "Taha", brand: "Mercedes", service: "Car Moing", time: "9/9/2018 2:00")]))
-        requestsData?.append(allRequests(sectionTitle: "Accedent2",section : 3,collapsed :false, request: [request(name: "Taha", brand: "Mercedes", service: "Car Moing", time: "9/9/2018 2:00")]))
-        requestsData?.append(allRequests)
+//        requestsData?.append(allRequests(sectionTitle: "Accedent1",section: 0,collapsed :false, request: [request(name: "Taha", brand: "Mercedes", service: "Car Moing", time: "9/9/2018 2:00")]))
+//        requestsData?.append(allRequests(sectionTitle: "Accedent2",section : 1,collapsed :false, request: [request(name: "Taha", brand: "Mercedes", service: "Car Moing", time: "9/9/2018 2:00")]))
+//        requestsData?.append(allRequests(sectionTitle: "Accedent2",section : 3,collapsed :false, request: [request(name: "Taha", brand: "Mercedes", service: "Car Moing", time: "9/9/2018 2:00")]))
+//        requestsData?.append(allRequests)
     }
 
     /*
