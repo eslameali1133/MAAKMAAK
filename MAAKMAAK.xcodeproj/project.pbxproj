@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CA321062214BF1700327566 /* RequestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA321052214BF1700327566 /* RequestsVC.swift */; };
+		0CA3210A2216360100327566 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CA321082216360100327566 /* HeaderView.xib */; };
+		0CA3210B2216360100327566 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA321092216360100327566 /* HeaderView.swift */; };
+		0CA3210E2216389800327566 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3210C2216389800327566 /* RequestCell.swift */; };
+		0CA3210F2216389800327566 /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3210D2216389800327566 /* RequestCell.xib */; };
 		187BC76A221458C40083C097 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC71E221458BD0083C097 /* UIView.swift */; };
 		187BC76B221458C40083C097 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC71F221458BD0083C097 /* UIColor.swift */; };
 		187BC76C221458C40083C097 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC720221458BD0083C097 /* UITextField.swift */; };
@@ -68,6 +73,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CA321052214BF1700327566 /* RequestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsVC.swift; sourceTree = "<group>"; };
+		0CA321082216360100327566 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		0CA321092216360100327566 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		0CA3210C2216389800327566 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
+		0CA3210D2216389800327566 /* RequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCell.xib; sourceTree = "<group>"; };
 		187BC708221458800083C097 /* MAAKMAAK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAAKMAAK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187BC71E221458BD0083C097 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		187BC71F221458BD0083C097 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -148,6 +158,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CA32107221635E500327566 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0CA321092216360100327566 /* HeaderView.swift */,
+				0CA321082216360100327566 /* HeaderView.xib */,
+				0CA3210C2216389800327566 /* RequestCell.swift */,
+				0CA3210D2216389800327566 /* RequestCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		119B9E2C742C39EBC718EFC9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +199,7 @@
 		187BC70A221458800083C097 /* MAAKMAAK */ = {
 			isa = PBXGroup;
 			children = (
+				0CA32107221635E500327566 /* Views */,
 				187BC75C221458C10083C097 /* AppDelegate.swift */,
 				187BC724221458BE0083C097 /* Info.plist */,
 				187BC75F221458C30083C097 /* Assets.xcassets */,
@@ -353,6 +375,7 @@
 				187BC759221458C10083C097 /* LoginViewController.swift */,
 				187BC75A221458C10083C097 /* BrandsVC.swift */,
 				187BC75B221458C10083C097 /* RegisterViewController.swift */,
+				0CA321052214BF1700327566 /* RequestsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -475,8 +498,10 @@
 			files = (
 				187BC772221458C40083C097 /* HomeVender.storyboard in Resources */,
 				187BC773221458C40083C097 /* Authstory.storyboard in Resources */,
+				0CA3210A2216360100327566 /* HeaderView.xib in Resources */,
 				187BC79E221458C40083C097 /* Localizable.strings in Resources */,
 				187BC7A0221458C40083C097 /* lang-ar.json in Resources */,
+				0CA3210F2216389800327566 /* RequestCell.xib in Resources */,
 				187BC79B221458C40083C097 /* Assets.xcassets in Resources */,
 				187BC79F221458C40083C097 /* lang-en.json in Resources */,
 				187BC771221458C40083C097 /* LaunchScreen.storyboard in Resources */,
@@ -604,6 +629,7 @@
 				18F80A362215A1AE002AAFBC /* PickerDropdown.swift in Sources */,
 				187BC786221458C40083C097 /* LocalizableUIBarItem.swift in Sources */,
 				187BC782221458C40083C097 /* LocalizableButton.swift in Sources */,
+				0CA3210E2216389800327566 /* RequestCell.swift in Sources */,
 				187BC779221458C40083C097 /* Loader.swift in Sources */,
 				187BC798221458C40083C097 /* RegisterViewController.swift in Sources */,
 				187BC76B221458C40083C097 /* UIColor.swift in Sources */,
@@ -619,6 +645,7 @@
 				187BC78F221458C40083C097 /* ViewController.swift in Sources */,
 				18F80A3A2215A4EC002AAFBC /* Country_Area_CityModel.swift in Sources */,
 				187BC778221458C40083C097 /* Enum.swift in Sources */,
+				0CA3210B2216360100327566 /* HeaderView.swift in Sources */,
 				187BC781221458C40083C097 /* LocalizableTextView.swift in Sources */,
 				187BC76E221458C40083C097 /* UIText.swift in Sources */,
 				187BC792221458C40083C097 /* ServiceVC.swift in Sources */,
@@ -629,6 +656,7 @@
 				187BC78C221458C40083C097 /* MoreCell.swift in Sources */,
 				187BC77E221458C40083C097 /* LocalizableString.swift in Sources */,
 				187BC796221458C40083C097 /* LoginViewController.swift in Sources */,
+				0CA321062214BF1700327566 /* RequestsVC.swift in Sources */,
 				187BC797221458C40083C097 /* BrandsVC.swift in Sources */,
 				187BC799221458C40083C097 /* AppDelegate.swift in Sources */,
 				187BC776221458C40083C097 /* LocationHelper.swift in Sources */,

@@ -17,7 +17,7 @@ class moreVC: MYViewController {
     var logIn :String = AppCommon.sharedInstance.localization("Log_In")
     var brands = AppCommon.sharedInstance.localization("brands")
     var services = AppCommon.sharedInstance.localization("services")
-    
+    var request = AppCommon.sharedInstance.localization("requests")
     
     
     
@@ -32,7 +32,7 @@ class moreVC: MYViewController {
         // Do any additional setup after loading the view.
     }
     func getData()  {
-        items = [register,logIn,brands,services]
+        items = [register,logIn,brands,services,"Requests"]
 //          tblMoe.reloadData()
     }
     
@@ -72,6 +72,10 @@ extension moreVC :UITableViewDelegate,UITableViewDataSource{
         case 3:
             let Setting = UIStoryboard(name: "HomeVender", bundle: nil)
             let ServiceVC = Setting.instantiateViewController(withIdentifier: "ServiceVC") as! ServiceVC
+            self.navigationController?.pushViewController(ServiceVC, animated: true)
+        case 4:
+            let Setting = UIStoryboard(name: "HomeVender", bundle: nil)
+            let ServiceVC = Setting.instantiateViewController(withIdentifier: "RequestsVC") as! RequestsVC
             self.navigationController?.pushViewController(ServiceVC, animated: true)
             
         default:
