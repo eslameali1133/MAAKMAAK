@@ -93,6 +93,9 @@
       "Duplicated user" : " رقم الهاتف مستخدم بالفعل",
       "thankYouForSignup" : "شكراً للتسجيل",
        "startUsingApp" : "إبدأ في إستخدام التطبيق",
+       "Error" : "خطأ في الخادم",
+           "VerficationCodeNotValid" : "كود التفعيل غير صحيح",
+            "Welcom" : "مرحبا",
        
     
     

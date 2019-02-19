@@ -49,7 +49,8 @@ class RegisterViewController: UIViewController {
             isValid = false
         }
         
-        if TXTMobil.text! == "" { Loader.showError(message: AppCommon.sharedInstance.localization("Phone field cannot be left blank"))
+        if TXTMobil.text! == "" {
+            Loader.showError(message: AppCommon.sharedInstance.localization("Phone field cannot be left blank"))
             isValid = false
         }
         if TXTName.text! == "" { Loader.showError(message: AppCommon.sharedInstance.localization("Name field cannot be left blank"))
@@ -117,8 +118,9 @@ extension RegisterViewController: HttpHelperDelegate {
             
                print( Result["userId"].stringValue)
                print( Result["userType"].boolValue)
-                SharedData.SharedInstans.SetIsLogin(true)
-                AppCommon.sharedInstance.alertWith(title: "", message: AppCommon.sharedInstance.localization("thankYouForSignup"), controller: self, actionTitle: AppCommon.sharedInstance.localization("startUsingApp"), actionStyle: .default, withCancelAction: false, completion: {
+            
+                
+                AppCommon.sharedInstance.alertWith(title: "", message: AppCommon.sharedInstance.localization("thankYouForSignup"), controller: self, actionTitle: AppCommon.sharedInstance.localization("Welcom"), actionStyle: .default, withCancelAction: false, completion: {
                     AppCommon.sharedInstance.GotoVerificationcode(vc: self,UserID:Result["userId"].stringValue,userType: Result["userType"].boolValue,Mobile:"2\(self.TXTMobil.text!)")
                 })
             }
