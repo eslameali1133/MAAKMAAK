@@ -49,7 +49,8 @@ class RegisterViewController: UIViewController {
             isValid = false
         }
         
-        if TXTMobil.text! == "" { Loader.showError(message: AppCommon.sharedInstance.localization("Phone field cannot be left blank"))
+        if TXTMobil.text! == "" {
+            Loader.showError(message: AppCommon.sharedInstance.localization("Phone field cannot be left blank"))
             isValid = false
         }
         if TXTName.text! == "" { Loader.showError(message: AppCommon.sharedInstance.localization("Name field cannot be left blank"))
@@ -85,7 +86,7 @@ class RegisterViewController: UIViewController {
     }
     
     func signup () {
-        let params = ["Mobile":"2\(TXTMobil.text!)","Email":"  es@es.com","Password":TXTConfirm.text!,"UserType": Carowner,"FireBaseToken":"123" ] as [String: Any]
+        let params = ["Mobile":"2\(TXTMobil.text!)","Password":TXTConfirm.text!,"UserType": Carowner,"FireBaseToken":"123"] as [String: Any]
         let headers = ["Content-Type": "application/json"]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.Register, method: .post, parameters: params, tag: 1, header: headers)
@@ -109,18 +110,18 @@ extension RegisterViewController: HttpHelperDelegate {
         let forbiddenMail : String = AppCommon.sharedInstance.localization("Duplicated user")
         if Tag == 1 {
             print(json["status"])
-            if status.stringValue == "400" {
+            if status.stringValue == "201" {
+                print( Result["userId"].stringValue)
+                print( Result["userType"].boolValue)
+                 SharedData.SharedInstans.SetIsActive(Result["active"].boolValue)
+               AppCommon.sharedInstance.alertWith(title: "", message: AppCommon.sharedInstance.localization("thankYouForSignup"), controller: self, actionTitle: AppCommon.sharedInstance.localization("Welcom"), actionStyle: .default, withCancelAction: false, completion: {
+                    AppCommon.sharedInstance.GotoVerificationcode(vc: self,UserID:Result["userId"].stringValue,userType: Result["userType"].boolValue,Mobile:"2\(self.TXTMobil.text!)")
+                })
                 
-                Loader.showError(message: (forbiddenMail))
                 
             } else {
             
-               print( Result["userId"].stringValue)
-               print( Result["userType"].boolValue)
-                SharedData.SharedInstans.SetIsLogin(true)
-                AppCommon.sharedInstance.alertWith(title: "", message: AppCommon.sharedInstance.localization("thankYouForSignup"), controller: self, actionTitle: AppCommon.sharedInstance.localization("startUsingApp"), actionStyle: .default, withCancelAction: false, completion: {
-                    AppCommon.sharedInstance.GotoVerificationcode(vc: self,UserID:Result["userId"].stringValue,userType: Result["userType"].boolValue,Mobile:"2\(self.TXTMobil.text!)")
-                })
+              Loader.showError(message: (forbiddenMail))
             }
         }
         

@@ -67,6 +67,8 @@
 		187BC7A0221458C40083C097 /* lang-ar.json in Resources */ = {isa = PBXBuildFile; fileRef = 187BC769221458C30083C097 /* lang-ar.json */; };
 		187BC7A22214DA9A0083C097 /* AMCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC7A12214DA9A0083C097 /* AMCircleImageView.swift */; };
 		187BC7A42214E74A0083C097 /* ChooseLocationToShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC7A32214E74A0083C097 /* ChooseLocationToShareViewController.swift */; };
+		18A3688C221C1D6000232126 /* CheckPhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3688B221C1D6000232126 /* CheckPhoneNumberVC.swift */; };
+		18F3EDA1221AE780008F29F2 /* CarBrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3EDA0221AE780008F29F2 /* CarBrandModel.swift */; };
 		18F80A362215A1AE002AAFBC /* PickerDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F80A352215A1AE002AAFBC /* PickerDropdown.swift */; };
 		18F80A3A2215A4EC002AAFBC /* Country_Area_CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F80A392215A4EC002AAFBC /* Country_Area_CityModel.swift */; };
 		52C365343B7330D549DD5596 /* Pods_MAAKMAAK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECF4095C7EE059443F1CF87 /* Pods_MAAKMAAK.framework */; };
@@ -139,6 +141,8 @@
 		187BC769221458C30083C097 /* lang-ar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ar.json"; sourceTree = "<group>"; };
 		187BC7A12214DA9A0083C097 /* AMCircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMCircleImageView.swift; sourceTree = "<group>"; };
 		187BC7A32214E74A0083C097 /* ChooseLocationToShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLocationToShareViewController.swift; sourceTree = "<group>"; };
+		18A3688B221C1D6000232126 /* CheckPhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPhoneNumberVC.swift; sourceTree = "<group>"; };
+		18F3EDA0221AE780008F29F2 /* CarBrandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandModel.swift; sourceTree = "<group>"; };
 		18F80A352215A1AE002AAFBC /* PickerDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDropdown.swift; sourceTree = "<group>"; };
 		18F80A392215A4EC002AAFBC /* Country_Area_CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country_Area_CityModel.swift; sourceTree = "<group>"; };
 		1A399637E1C815F20BB83E69 /* Pods-MAAKMAAK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAAKMAAK.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK.release.xcconfig"; sourceTree = "<group>"; };
@@ -376,6 +380,7 @@
 				187BC75A221458C10083C097 /* BrandsVC.swift */,
 				187BC75B221458C10083C097 /* RegisterViewController.swift */,
 				0CA321052214BF1700327566 /* RequestsVC.swift */,
+				18A3688B221C1D6000232126 /* CheckPhoneNumberVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				18F80A392215A4EC002AAFBC /* Country_Area_CityModel.swift */,
+				18F3EDA0221AE780008F29F2 /* CarBrandModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -621,6 +627,7 @@
 				187BC76D221458C40083C097 /* Ex+TableView.swift in Sources */,
 				187BC76A221458C40083C097 /* UIView.swift in Sources */,
 				187BC7A22214DA9A0083C097 /* AMCircleImageView.swift in Sources */,
+				18A3688C221C1D6000232126 /* CheckPhoneNumberVC.swift in Sources */,
 				187BC7A42214E74A0083C097 /* ChooseLocationToShareViewController.swift in Sources */,
 				187BC788221458C40083C097 /* APIConstants.swift in Sources */,
 				187BC780221458C40083C097 /* LocalizableTextField.swift in Sources */,
@@ -660,6 +667,7 @@
 				187BC797221458C40083C097 /* BrandsVC.swift in Sources */,
 				187BC799221458C40083C097 /* AppDelegate.swift in Sources */,
 				187BC776221458C40083C097 /* LocationHelper.swift in Sources */,
+				18F3EDA1221AE780008F29F2 /* CarBrandModel.swift in Sources */,
 				187BC774221458C40083C097 /* ServiceDetailsCell.swift in Sources */,
 				187BC791221458C40083C097 /* VerifyCodeVC.swift in Sources */,
 				187BC775221458C40083C097 /* LanguageManager.swift in Sources */,

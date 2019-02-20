@@ -96,6 +96,17 @@
       "Duplicated user" : "phone are already used for another user",
        "thankYouForSignup" : "Thank you for signup",
        "startUsingApp" : "Start using the app",
+         "Error" : "Error",
+          "VerficationCodeNotValid" : "Verification Code Not Correct",
+              "Welcom" : "Welcome",
+           "EnterPhoneTOSendSMS" :   "Enter Phone to send sms",
+           "MobileNotExit" :   "Mobile Number Not Exit ",
+           
+           
+          
+         
+       
+       
      
     
     

@@ -56,6 +56,12 @@ class HttpHelper{
         request(url: url, method: .get, parameters: parameters, tag: Tag,header: headers)
     }
     
+    public  func GetWithoutHeader(url:String,parameters:Parameters=[:],Tag:Int ){
+        
+        
+        request(url: url, method: .get, parameters: parameters, tag: Tag,header: nil)
+    }
+    
     func requestWith(endUrl: String, imageData: Data?, parameters: [String : Any]){
         
         let url = "http://google.com" /* your API url */
@@ -188,6 +194,7 @@ class HttpHelper{
         
         Alamofire.request(url, method: method,parameters: parameters,headers:header)
             .responseJSON { (response) in
+                print(response)
                 if response.response == nil {
                     self.delegate?.receivedErrorWithStatusCode(statusCode: statusCode.NOT_FOUND)
                     return
