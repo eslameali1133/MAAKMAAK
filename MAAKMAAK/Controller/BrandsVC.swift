@@ -35,7 +35,8 @@ class BrandsVC: UIViewController {
     func fillData()  {
         items.removeAll()
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
-        http.GetWithoutHeader(url:"\(APIConstants.GetProviderBrand)?\(userid)", Tag: 1)
+        print(userid)
+        http.GetWithoutHeader(url:"\(APIConstants.GetProviderBrand)userId=\(userid)", Tag: 1)
     }
 
    
@@ -77,6 +78,10 @@ extension BrandsVC :UITableViewDelegate,UITableViewDataSource{
         cell.btnSwitch.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)
         cell.btnSwitch.tag = indexPath.row
         
+        if items[indexPath.row].isSelected == true
+        {
+             cell.btnSwitch.isSelected = items[indexPath.row].isSelected
+        }
         cell.btnSwitch.isOn = items[indexPath.row].isSelected
         
         

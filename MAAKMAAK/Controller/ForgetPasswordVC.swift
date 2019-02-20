@@ -15,6 +15,7 @@ class ForgetPasswordVC: UIViewController {
     @IBOutlet weak var TXTConfirm: UITextField!
     var mobile = ""
      var http = HttpHelper()
+    var isComeFromForget = false
     override func viewDidLoad() {
         super.viewDidLoad()
         if  SharedData.SharedInstans.GetIsLogin(){
@@ -53,7 +54,8 @@ class ForgetPasswordVC: UIViewController {
     }
     
     func chnagepassword() {
-        let params = ["Mobile":mobile,"Password":TXTPassword.text!] as [String: Any]
+        print(mobile)
+        let params = ["Mobile":mobile,"NewPassword":TXTPassword.text!] as [String: Any]
         let headers = ["Content-Type": "application/json"]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.changePassword, method: .post, parameters: params, tag: 1, header: headers)
@@ -63,7 +65,7 @@ class ForgetPasswordVC: UIViewController {
 
 extension ForgetPasswordVC: HttpHelperDelegate {
     func receivedResponse(dictResponse: Any, Tag: Int) {
-        print(dictResponse)
+        debugPrint(dictResponse)
         AppCommon.sharedInstance.dismissLoader(self.view)
         
         let json = JSON(dictResponse)
@@ -81,7 +83,18 @@ extension ForgetPasswordVC: HttpHelperDelegate {
             
             print(json["status"])
             if status.stringValue  == "201" {
-                Loader.show(success: true)
+                if isComeFromForget == true
+                {
+                    let sb = UIStoryboard(name: "Authstory", bundle: nil)
+                    let controller = sb.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                    
+                    self.navigationController?.pushViewController(controller, animated: true)
+                    
+                }else
+                {
+                    Loader.show(success: true)
+                    
+                }
                 
             
             } else {

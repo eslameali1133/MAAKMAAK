@@ -99,7 +99,10 @@
          "Error" : "Error",
           "VerficationCodeNotValid" : "Verification Code Not Correct",
               "Welcom" : "Welcome",
-          
+           "EnterPhoneTOSendSMS" :   "Enter Phone to send sms",
+           "MobileNotExit" :   "Mobile Number Not Exit ",
+           
+           
           
          
        

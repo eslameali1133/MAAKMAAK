@@ -14,6 +14,7 @@ class SharedData{
     let defaults = UserDefaults.standard
 
     let IsLogin = "IsLogin"
+     let IsActive = "IsActive"
     let Language = "Language"
 
     func SetIsLogin(_ isLogin:Bool){
@@ -23,6 +24,18 @@ class SharedData{
     func GetIsLogin()->Bool{
         if (UserDefaults.standard.object(forKey: IsLogin) != nil) {
             return defaults.bool(forKey: IsLogin)
+        }else{
+            return false
+        }
+    }
+    
+    func SetIsActive(_ isActive:Bool){
+        defaults.set(isActive, forKey: IsActive)
+    }
+    
+    func GetIsActive()->Bool{
+        if (UserDefaults.standard.object(forKey: IsActive) != nil) {
+            return defaults.bool(forKey: IsActive)
         }else{
             return false
         }

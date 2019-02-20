@@ -81,6 +81,9 @@ extension LoginViewController: HttpHelperDelegate {
             print(json["status"])
             if status.stringValue  == "201" {
                 SharedData.SharedInstans.SetIsLogin(true)
+                SharedData.SharedInstans.SetIsActive(Result["active"].boolValue)
+                
+                print(Result["userId"])
                 
                 UserDefaults.standard.set(Result["userId"].stringValue, forKey: "UserId")
                 UserDefaults.standard.set(Result["userType"].stringValue, forKey: "UserType")

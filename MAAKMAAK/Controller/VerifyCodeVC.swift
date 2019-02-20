@@ -15,7 +15,7 @@ class VerifyCodeVC: UIViewController {
  @IBOutlet weak var txtCode: KKPinCodeTextField!
     var UserID = ""
     var UserType = false
-    var mobile = "01110891755"
+    var mobile = ""
     var verificationCode = ""
     var FalgComeFromRegister = true
       var http = HttpHelper()
@@ -53,7 +53,7 @@ class VerifyCodeVC: UIViewController {
     func SendVerificationCode()
     {
         print(mobile)
-        let params = ["mobile":"2\(mobile)"] as [String: Any]
+        let params = ["mobile":"\(mobile)"] as [String: Any]
         
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         let headers = ["": ""]
@@ -67,10 +67,22 @@ class VerifyCodeVC: UIViewController {
             SharedData.SharedInstans.SetIsLogin(true)
             UserDefaults.standard.set(UserID, forKey: "UserId")
             UserDefaults.standard.set(UserType, forKey: "UserType")
-             UserDefaults.standard.set("2\(mobile)", forKey: "mobile")
+             UserDefaults.standard.set("\(mobile)", forKey: "mobile")
+            
+            if FalgComeFromRegister == true
+            {
             AppCommon.sharedInstance.alertWith(title: "", message: AppCommon.sharedInstance.localization("Welcom"), controller: self, actionTitle: AppCommon.sharedInstance.localization("startUsingApp"), actionStyle: .default, withCancelAction: false, completion: {
+               
                 AppCommon.sharedInstance.ShowHome()
             })
+            }else
+            {
+                let sb = UIStoryboard(name: "Authstory", bundle: nil)
+                let controller = sb.instantiateViewController(withIdentifier: "ForgetPasswordVC") as! ForgetPasswordVC
+                controller.mobile = mobile
+                controller.isComeFromForget = true
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
         }
     }
     func ValidCode()->Bool{

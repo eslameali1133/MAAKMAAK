@@ -96,6 +96,8 @@
        "Error" : "خطأ في الخادم",
            "VerficationCodeNotValid" : "كود التفعيل غير صحيح",
             "Welcom" : "مرحبا",
+            "EnterPhoneTOSendSMS" : "ادخل رقم الهاتف لارسال كود التفعيل",
+               "MobileNotExit" :   "رقم الهارتف غير موجود",
        
     
     
