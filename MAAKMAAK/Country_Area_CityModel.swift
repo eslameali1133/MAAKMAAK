@@ -13,16 +13,32 @@ class CountryModel: NSObject {
     var id = ""
     var nameAR = ""
     var nameEN = ""
+    
+     init(id: String ,nameAR:String,nameEN:String) {
+        self.id = id
+        self.nameAR = nameAR
+        self.nameEN = nameEN
+    }
 }
 
 class CityModel: NSObject {
     var id = ""
     var nameAR = ""
     var nameEN = ""
+     init(id:String ,nameAR:String,nameEN:String) {
+        self.id = id
+        self.nameAR = nameAR
+        self.nameEN = nameEN
+    }
 }
 
 class AreaModel: NSObject {
     var id = ""
     var nameAR = ""
     var nameEN = ""
+     init(id:String ,nameAR:String,nameEN:String) {
+        self.id = id
+        self.nameAR = nameAR
+        self.nameEN = nameEN
+    }
 }

@@ -67,7 +67,7 @@ extension LoginViewController: HttpHelperDelegate {
         
         let json = JSON(dictResponse)
         
-        let forbiddenMail : String = AppCommon.sharedInstance.localization("Error")
+        let forbiddenMail : String = AppCommon.sharedInstance.localization("Username")
         if Tag == 1 {
             
             let status =  json["status"]
