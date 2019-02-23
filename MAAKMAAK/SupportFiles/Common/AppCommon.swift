@@ -63,6 +63,12 @@ class AppCommon: UIViewController {
         delegate.window?.rootViewController = sb.instantiateInitialViewController()
     }
     
+    func showlogin(vc: UIViewController) {
+        let sb = UIStoryboard(name: "Authstory", bundle: nil)
+        let controller = sb.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        
+        vc.navigationController?.pushViewController(controller, animated: true)    }
+    
     
     
 //

@@ -28,6 +28,7 @@ class BrandsVC: UIViewController {
     
     
     @IBAction func SaveBtn(_ sender: Any) {
+        
          SaveData()
     }
     
