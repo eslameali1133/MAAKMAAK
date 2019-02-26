@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
     }
    
     func Login() {
-        let params = ["Mobile":"2\(TXTMobil.text!)","Password":TXTPassword.text!,"FireBaseToken":"123" ] as [String: Any]
+        let params = ["Mobile":"2\(TXTMobil.text!)","Password":TXTPassword.text!,"FireBaseToken": UserDefaults.standard.string(forKey: "token")! ] as [String: Any]
         let headers = ["Content-Type": "application/json"]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.Login, method: .post, parameters: params, tag: 1, header: headers)

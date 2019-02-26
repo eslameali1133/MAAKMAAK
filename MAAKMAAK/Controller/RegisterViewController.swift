@@ -86,7 +86,7 @@ class RegisterViewController: UIViewController {
     }
     
     func signup () {
-        let params = ["Name":TXTName.text!, "Mobile":"2\(TXTMobil.text!)","Password":TXTConfirm.text!,"UserType": Carowner,"FireBaseToken":"123"] as [String: Any]
+        let params = ["Name":TXTName.text!, "Mobile":"2\(TXTMobil.text!)","Password":TXTConfirm.text!,"UserType": Carowner,"FireBaseToken": UserDefaults.standard.string(forKey: "token")!] as [String: Any]
         let headers = ["Content-Type": "application/json"]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.Register, method: .post, parameters: params, tag: 1, header: headers)
