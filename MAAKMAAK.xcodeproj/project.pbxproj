@@ -76,6 +76,7 @@
 		18F80A3A2215A4EC002AAFBC /* Country_Area_CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F80A392215A4EC002AAFBC /* Country_Area_CityModel.swift */; };
 		18FDDBF9221F3E9E00D99AAB /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDDBF8221F3E9E00D99AAB /* AboutVC.swift */; };
 		52C365343B7330D549DD5596 /* Pods_MAAKMAAK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECF4095C7EE059443F1CF87 /* Pods_MAAKMAAK.framework */; };
+		F49DB5EC2225C23000131DCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F49DB5EB2225C23000131DCD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,8 @@
 		18FDDBF8221F3E9E00D99AAB /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		1A399637E1C815F20BB83E69 /* Pods-MAAKMAAK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAAKMAAK.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK.release.xcconfig"; sourceTree = "<group>"; };
 		6DB7DDEF4425873D8252547E /* Pods-MAAKMAAK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAAKMAAK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK.debug.xcconfig"; sourceTree = "<group>"; };
+		F49DB5EA2225BC4500131DCD /* MAAKMAAK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MAAKMAAK.entitlements; sourceTree = "<group>"; };
+		F49DB5EB2225C23000131DCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FECF4095C7EE059443F1CF87 /* Pods_MAAKMAAK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAAKMAAK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,6 +214,8 @@
 		187BC70A221458800083C097 /* MAAKMAAK */ = {
 			isa = PBXGroup;
 			children = (
+				F49DB5EB2225C23000131DCD /* GoogleService-Info.plist */,
+				F49DB5EA2225BC4500131DCD /* MAAKMAAK.entitlements */,
 				0CA32107221635E500327566 /* Views */,
 				187BC75C221458C10083C097 /* AppDelegate.swift */,
 				187BC724221458BE0083C097 /* Info.plist */,
@@ -487,6 +492,14 @@
 					187BC707221458800083C097 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -522,6 +535,7 @@
 				0CA3210F2216389800327566 /* RequestCell.xib in Resources */,
 				18A36890221EEC3100232126 /* About.storyboard in Resources */,
 				187BC79B221458C40083C097 /* Assets.xcassets in Resources */,
+				F49DB5EC2225C23000131DCD /* GoogleService-Info.plist in Resources */,
 				187BC79F221458C40083C097 /* lang-en.json in Resources */,
 				187BC771221458C40083C097 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -836,13 +850,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MAAKMAAK/MAAKMAAK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 828KJ8U374;
 				INFOPLIST_FILE = MAAKMAAK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EslamAmaakmaak.MAAKMAAK;
+				PRODUCT_BUNDLE_IDENTIFIER = EslamAlimaakmaak.MAAKMAAK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -856,13 +872,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MAAKMAAK/MAAKMAAK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 828KJ8U374;
 				INFOPLIST_FILE = MAAKMAAK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EslamAmaakmaak.MAAKMAAK;
+				PRODUCT_BUNDLE_IDENTIFIER = EslamAlimaakmaak.MAAKMAAK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

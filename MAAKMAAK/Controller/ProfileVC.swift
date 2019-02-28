@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Cosmos
+import Alamofire
 
 protocol shareLocationDelegate {
     func shareLocationDelegate(lat: String, Long: String)
@@ -20,6 +21,7 @@ class ProfileVC: MYViewController,UIImagePickerControllerDelegate,UINavigationCo
     @IBOutlet weak var imageProfile: customImageView!{
         didSet{
             imageProfile.layer.cornerRadius = imageProfile.frame.width/2
+            imageProfile.clipsToBounds = true
         }
     }
     @IBOutlet weak var MapImageView: customImageView!
@@ -46,6 +48,9 @@ class ProfileVC: MYViewController,UIImagePickerControllerDelegate,UINavigationCo
     var CountryID = ""
     var CityID = ""
     var AreaID = ""
+    var LatPosition = ""
+    var LngPosition = ""
+    
     var ComeFromSetData = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,23 +85,24 @@ class ProfileVC: MYViewController,UIImagePickerControllerDelegate,UINavigationCo
         }
         print(vendorProfile?.image)
         
-        if (vendorProfile?.image)! != "null" || (vendorProfile?.image)! != ""
+        if  (vendorProfile?.image)! != ""
         {
-            //            imageProfile.loadimageUsingUrlString(url: (vendorProfile?.image)!)
+            imageProfile.loadimageUsingUrlString(url: (vendorProfile?.image)!)
         }else
         {
             imageProfile.image =  UIImage(named: "man")
         }
         
-        if (vendorProfile?.latitude)! != "null" || (vendorProfile?.latitude)! != ""
+        if  (vendorProfile?.latitude)! != "" || (vendorProfile?.latitude)! != "0"
         {
-            //            LoadMapImage(lat:(vendorProfile?.latitude)! , Long: (vendorProfile?.longitude)!)
+            LoadMapImage(lat:(vendorProfile?.latitude)! , Long: (vendorProfile?.longitude)!)
         }else
         {
             MapImageView.image =  UIImage(named: "officePlaceholder-1")
         }
         
-        
+        self.LatPosition = (vendorProfile?.latitude)!
+        self.LngPosition = (vendorProfile?.longitude)!
         
         
     }
@@ -243,9 +249,96 @@ class ProfileVC: MYViewController,UIImagePickerControllerDelegate,UINavigationCo
     }
     
     
+    
+    func UpdateCustomerProfile() {
+          let mobile = UserDefaults.standard.string(forKey: "mobile")!
+        let UserId = UserDefaults.standard.string(forKey: "UserId")!
+        var parameters = [:] as [String: Any]
+      
+        print(mobile)
+        let data = self.imageProfile.image!.jpegData(compressionQuality: 0.5)
+        let headers: HTTPHeaders = [
+            /* "Authorization": "your_access_token",  in case you need authorization header */
+            "Content-type": "multipart/form-data"
+        ]
+        parameters = [
+            "UserId" : UserId,
+            "CompanyName": TXT_name.text!,
+            "Image": data!,
+            "Mobile": mobile,
+            "CityId" : CityID,
+            "AreaId": AreaID,
+            "CountryId" : CountryID,
+            "ContactPerson": TXT_ContactPerson.text!,
+            "Latitude" : LatPosition,
+            "Longitude": LngPosition,
+            "Email" : TXT_Email.text!,
+            
+        ]
+        
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                for (key,value) in parameters {
+                    if let value = value as? String {
+                        multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                    }
+                }
+                
+                if let data = self.imageProfile.image!.jpegData(compressionQuality: 0.5){
+                    multipartFormData.append(data, withName: "image", fileName: "Venderphoto\(arc4random_uniform(100))"+".jpeg", mimeType: "image/jpeg")
+                }
+                
+//                let data = self.imageProfile.image!.jpegData(compressionQuality: 0.5)
+//
+//                multipartFormData.append(data!, withName: "Venderphoto", fileName: "Venderphoto\(arc4random_uniform(100))"+".jpeg", mimeType: "image/jpeg")
+                
+        },
+            usingThreshold:UInt64.init(),
+            to: "http://hwsrv-434369.hostwindsdns.com/api/ProviderAccount/SaveProfile",
+            method: .post, headers: headers,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print(progress)
+                    })
+                    upload.responseJSON { response in
+                        // If the request to get activities is succesfull, store them
+                        if response.result.isSuccess{
+                            print(response.debugDescription)
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                            
+                        } else {
+                            var errorMessage = "ERROR MESSAGE: "
+                            if let data = response.data {
+                                // Print message
+                                print(errorMessage)
+                                AppCommon.sharedInstance.dismissLoader(self.view)
+                                
+                            }
+                            print(errorMessage) //Contains General error message or specific.
+                            print(response.debugDescription)
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                        }
+                        
+                        
+                    }
+                case .failure(let encodingError):
+                    print("FALLE ------------")
+                    print(encodingError)
+                    AppCommon.sharedInstance.dismissLoader(self.view)
+                }
+        }
+        )
+    }
+    
+    
     @IBAction func Btn_Save(_ sender: Any) {
         if validation(){
-            print(123)
+            AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+            UpdateCustomerProfile()
         }
     }
     
@@ -255,7 +348,9 @@ class ProfileVC: MYViewController,UIImagePickerControllerDelegate,UINavigationCo
 extension ProfileVC: shareLocationDelegate {
     func shareLocationDelegate(lat: String, Long: String){
         self.tabBarController?.tabBar.isHidden = false
-        print(lat,lat)
+        print(lat,Long)
+        self.LatPosition = lat
+        self.LngPosition = Long
         LoadMapImage(lat: lat, Long: Long)
         
     }
