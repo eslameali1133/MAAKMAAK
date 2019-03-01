@@ -92,9 +92,11 @@ struct allRequests {
     var section : Int
     var collapsed :Bool
     var request :[request]
-    init(sectionTitle :String,request:[request]) {
+    init(sectionTitle :String,request:[request],section: Int,collapsed:Bool) {
         self.sectionTitle = sectionTitle
         self.request = request
+        self.collapsed = collapsed
+        self.section = section
     }
 }
 struct request {

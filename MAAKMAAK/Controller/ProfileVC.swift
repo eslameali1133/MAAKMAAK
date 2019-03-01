@@ -7,49 +7,121 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Cosmos
+import Alamofire
 
 protocol shareLocationDelegate {
     func shareLocationDelegate(lat: String, Long: String)
 }
 class ProfileVC: MYViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    @IBOutlet weak var imageProfile: AMCircleImageView!
+    var vendorProfile: VendorProfileModel?
+    
+    @IBOutlet weak var imageProfile: customImageView!{
+        didSet{
+            imageProfile.layer.cornerRadius = imageProfile.frame.width/2
+            imageProfile.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var MapImageView: customImageView!
-      @IBOutlet weak var TXTCountry: UITextField!
-     @IBOutlet weak var TXTCity: UITextField!
-     @IBOutlet weak var TXTArea: UITextField!
+    @IBOutlet weak var TXTCountry: UITextField!
+    @IBOutlet weak var TXTCity: UITextField!
+    @IBOutlet weak var TXTArea: UITextField!
+    @IBOutlet weak var TXT_ContactPerson: UITextField!
+    @IBOutlet weak var TXT_Email: UITextField!
+    @IBOutlet weak var TXT_MObile: UITextField!
+    @IBOutlet weak var TXT_name: UITextField!
+    @IBOutlet weak var Rate: CosmosView!
+    
     var AlertController: UIAlertController!
     let picker = UIImagePickerController()
     let pickerCountry = ToolbarPickerView()
     let pickerCity = ToolbarPickerView()
     let pickerArea = ToolbarPickerView()
-      var countryArray: [CountryModel] = [CountryModel]()
-      var CityArray: [CityModel] = [CityModel]()
-      var AreaArray: [AreaModel] = [AreaModel]()
-    
-     var pickerslectnum = 0 // flage to different betwwen Deopdown
+    var countryArray: [CountryModel] = [CountryModel]()
+    var CityArray: [CityModel] = [CityModel]()
+    var AreaArray: [AreaModel] = [AreaModel]()
+    var userid = ""
+    var http = HttpHelper()
+    var pickerslectnum = 0 // flage to different betwwen Deopdown
     var CountryID = ""
-     var CityID = ""
-      var AreaID = ""
+    var CityID = ""
+    var AreaID = ""
+    var LatPosition = ""
+    var LngPosition = ""
     
+    var ComeFromSetData = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        http.delegate = self
+        if  SharedData.SharedInstans.GetIsLogin(){
+            userid =  UserDefaults.standard.string(forKey: "UserId")!
+            loadProfileData()
+        }
         SetupUploadImage()
         SetUpPicker()
         // sheet to chose
-       
+        
     }
     
-    func loadData(){
+    func loadProfileData (){
         
-        var CountryMode = CountryModel()
-        CountryMode.id = "1"
-         CountryMode.nameAR = "مصر"
-        CountryMode.nameEN = "Egypt"
+        let params = ["userId":userid] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.GetWithoutHeader(url: APIConstants.GetVenderProfile, parameters: params, Tag: 1)
+        loadCountryData()
+    }
+    func SetData(){
+        print(vendorProfile?.mobile)
+        TXT_MObile.text = vendorProfile?.mobile
+        TXT_name.text = vendorProfile?.companyName
+        Rate.rating = Double((vendorProfile?.rate)!)
+        TXT_Email.text = vendorProfile?.email
         
-        countryArray.append(CountryMode)
+        if vendorProfile?.contactPerson != "null" || vendorProfile?.contactPerson != ""
+        {
+            TXT_ContactPerson.text = vendorProfile?.contactPerson
+        }
+        print(vendorProfile?.image)
         
+        if  (vendorProfile?.image)! != ""
+        {
+            imageProfile.loadimageUsingUrlString(url: (vendorProfile?.image)!)
+        }else
+        {
+            imageProfile.image =  UIImage(named: "man")
+        }
+        
+        if  (vendorProfile?.latitude)! != "" || (vendorProfile?.latitude)! != "0"
+        {
+            LoadMapImage(lat:(vendorProfile?.latitude)! , Long: (vendorProfile?.longitude)!)
+        }else
+        {
+            MapImageView.image =  UIImage(named: "officePlaceholder-1")
+        }
+        
+        self.LatPosition = (vendorProfile?.latitude)!
+        self.LngPosition = (vendorProfile?.longitude)!
+        
+        
+    }
+    
+    func loadCountryData(){
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.GetWithoutHeader(url: APIConstants.GetCountry, Tag: 2)
+    }
+    
+    func loadCityData(countryid:String){
+        let params = ["countryId":countryid] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.GetWithoutHeader(url: APIConstants.GetCity, parameters: params, Tag: 3)
+    }
+    
+    func loadAreaData(cityid:String){
+        let params = ["cityId":cityid] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.GetWithoutHeader(url: APIConstants.GetArea, parameters: params, Tag: 4)
     }
     func SetUpPicker(){
         
@@ -163,26 +235,122 @@ class ProfileVC: MYViewController,UIImagePickerControllerDelegate,UINavigationCo
         let Lng = Long
         let staticMapUrl: String = "http://maps.google.com/maps/api/staticmap?markers=color:red|\(Lat),\(Lng)&\("zoom=17&size=\(2 * Int(MapImageView.frame.size.width))x\(2 * Int(MapImageView.frame.size.height))")&sensor=true"
         
-        let mapul = "https://maps.google.com/maps/api/staticmap?key=AIzaSyCsqUTyaFGZWyuahXVzjgjT_E3ldB3ECCE&markers=color:red|\(Lat),\(Lng)&\("zoom=17&size=\(2 * Int(MapImageView.frame.size.width))x\(2 * Int(MapImageView.frame.size.height))")&sensor=true&fbclid=IwAR2rsCS0d9D-aow4D3AWs9-fv3EdiSDsFFUU80Gm6oQ7vCZwlXUaPjUOmU8"
+        let mapul = "https://maps.google.com/maps/api/staticmap?key=AIzaSyBIoI3T5929aAQVlIDsW5XsGzir5BjRfqo&markers=color:red|\(Lat),\(Lng)&\("zoom=17&size=\(2 * Int(MapImageView.frame.size.width))x\(2 * Int(MapImageView.frame.size.height))")&sensor=true&fbclid=IwAR2rsCS0d9D-aow4D3AWs9-fv3EdiSDsFFUU80Gm6oQ7vCZwlXUaPjUOmU8"
         
         let urlI = URL(string: mapul.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         if let url = urlI {
-            print("map: \(urlI)")
+            print("map: \(urlI!)")
             MapImageView.loadimageUsingUrlString(url: mapul)
         } else{
             print("map: \(urlI)")
             print("nil")
         }
         
-        
     }
+    
+    
+    
+    func UpdateCustomerProfile() {
+          let mobile = UserDefaults.standard.string(forKey: "mobile")!
+        let UserId = UserDefaults.standard.string(forKey: "UserId")!
+        var parameters = [:] as [String: Any]
+      
+        print(mobile)
+        let data = self.imageProfile.image!.jpegData(compressionQuality: 0.5)
+        let headers: HTTPHeaders = [
+            /* "Authorization": "your_access_token",  in case you need authorization header */
+            "Content-type": "multipart/form-data"
+        ]
+        parameters = [
+            "UserId" : UserId,
+            "CompanyName": TXT_name.text!,
+            "Image": data!,
+            "Mobile": mobile,
+            "CityId" : CityID,
+            "AreaId": AreaID,
+            "CountryId" : CountryID,
+            "ContactPerson": TXT_ContactPerson.text!,
+            "Latitude" : LatPosition,
+            "Longitude": LngPosition,
+            "Email" : TXT_Email.text!,
+            
+        ]
+        
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                for (key,value) in parameters {
+                    if let value = value as? String {
+                        multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                    }
+                }
+                
+                if let data = self.imageProfile.image!.jpegData(compressionQuality: 0.5){
+                    multipartFormData.append(data, withName: "image", fileName: "Venderphoto\(arc4random_uniform(100))"+".jpeg", mimeType: "image/jpeg")
+                }
+                
+//                let data = self.imageProfile.image!.jpegData(compressionQuality: 0.5)
+//
+//                multipartFormData.append(data!, withName: "Venderphoto", fileName: "Venderphoto\(arc4random_uniform(100))"+".jpeg", mimeType: "image/jpeg")
+                
+        },
+            usingThreshold:UInt64.init(),
+            to: "http://hwsrv-434369.hostwindsdns.com/api/ProviderAccount/SaveProfile",
+            method: .post, headers: headers,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print(progress)
+                    })
+                    upload.responseJSON { response in
+                        // If the request to get activities is succesfull, store them
+                        if response.result.isSuccess{
+                            print(response.debugDescription)
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                            
+                        } else {
+                            var errorMessage = "ERROR MESSAGE: "
+                            if let data = response.data {
+                                // Print message
+                                print(errorMessage)
+                                AppCommon.sharedInstance.dismissLoader(self.view)
+                                
+                            }
+                            print(errorMessage) //Contains General error message or specific.
+                            print(response.debugDescription)
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                        }
+                        
+                        
+                    }
+                case .failure(let encodingError):
+                    print("FALLE ------------")
+                    print(encodingError)
+                    AppCommon.sharedInstance.dismissLoader(self.view)
+                }
+        }
+        )
+    }
+    
+    
+    @IBAction func Btn_Save(_ sender: Any) {
+        if validation(){
+            AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+            UpdateCustomerProfile()
+        }
+    }
+    
 }
 
 
 extension ProfileVC: shareLocationDelegate {
     func shareLocationDelegate(lat: String, Long: String){
         self.tabBarController?.tabBar.isHidden = false
-        print(lat,lat)
+        print(lat,Long)
+        self.LatPosition = lat
+        self.LngPosition = Long
         LoadMapImage(lat: lat, Long: Long)
         
     }
@@ -207,10 +375,10 @@ extension ProfileVC: ToolbarPickerViewDelegate {
             self.TXTCity.resignFirstResponder()
             
         }else if pickerslectnum == 3{
-           
+            
             self.TXTArea.text = nil
             self.TXTArea.resignFirstResponder()
-          
+            
         }else
         {
             print("nil")
@@ -244,25 +412,30 @@ extension ProfileVC: UIPickerViewDelegate, UIPickerViewDataSource {
             if row == 0{
                 return  AppCommon.sharedInstance.localization("Chosecountry")
             }else {
-               if SharedData.SharedInstans.getLanguage() == "en"
-               {
-                return countryArray[row-1].nameEN
+                
+                if SharedData.SharedInstans.getLanguage() == "en"
+                {
+                    return countryArray[row-1].nameEN
                 }else
-               {
-                return countryArray[row-1].nameAR
+                {
+                    return countryArray[row-1].nameAR
                 }
+                
             }
         } else if pickerView == pickerCity {
             if row == 0{
                 return  AppCommon.sharedInstance.localization("ChoseCity")
             }else {
+                print(CityArray[row-1].id)
+                
                 if SharedData.SharedInstans.getLanguage() == "en"
                 {
-                return CityArray[row-1].nameEN
+                    return CityArray[row-1].nameEN
                 }else
                 {
-                     return CityArray[row-1].nameAR
+                    return CityArray[row-1].nameAR
                 }
+                
             }
         } else {
             if row == 0{
@@ -286,7 +459,7 @@ extension ProfileVC: UIPickerViewDelegate, UIPickerViewDataSource {
             if countryArray.count != 0 {
                 if row == 0 {
                     TXTCountry.text = nil
-                  
+                    
                 }else {
                     if SharedData.SharedInstans.getLanguage() == "en"
                     {
@@ -296,7 +469,7 @@ extension ProfileVC: UIPickerViewDelegate, UIPickerViewDataSource {
                         TXTCountry.text = countryArray[row-1].nameAR
                     }
                     CountryID = countryArray[row-1].id
-//                    sectionModel.GetProvincesReg(view: self.view, provincesID: provincesID, VC: self)
+                    loadCityData(countryid: countryArray[row-1].id)
                 }
             }
             
@@ -315,32 +488,225 @@ extension ProfileVC: UIPickerViewDelegate, UIPickerViewDataSource {
                         TXTCity.text = CityArray[row-1].nameAR
                     }
                     CityID = CityArray[row-1].id
-                    //                    sectionModel.GetProvincesReg(view: self.view, provincesID: provincesID, VC: self)
+                    loadAreaData(cityid: CityArray[row-1].id)
                 }
             }
-            else {
-                pickerslectnum = 3
-                if AreaArray.count != 0 {
-                    if row == 0 {
-                        TXTCountry.text = nil
-                        
-                    }else {
-                        if SharedData.SharedInstans.getLanguage() == "en"
-                        {
-                            TXTCountry.text = AreaArray[row-1].nameEN
-                        }else
-                        {
-                            TXTCountry.text = AreaArray[row-1].nameAR
-                        }
-                        AreaID = AreaArray[row-1].id
-                        //                    sectionModel.GetProvincesReg(view: self.view, provincesID: provincesID, VC: self)
-                    }
-                }
             
         }
+        else {
+            pickerslectnum = 3
+            if AreaArray.count != 0 {
+                if row == 0 {
+                    TXTArea.text = nil
+                    
+                }else {
+                    if SharedData.SharedInstans.getLanguage() == "en"
+                    {
+                        TXTArea.text = AreaArray[row-1].nameEN
+                    }else
+                    {
+                        TXTArea.text = AreaArray[row-1].nameAR
+                    }
+                    AreaID = AreaArray[row-1].id
+                    
+                }
+            }
+            
         }
         
         //        self.view.endEditing(true)
     }
     
+    func validation () -> Bool {
+        var isValid = true
+        
+        if AreaID == "" {
+            Loader.showError(message: AppCommon.sharedInstance.localization("AreaReq"))
+            isValid = false
+        }
+        if CityID == "" {
+            Loader.showError(message: AppCommon.sharedInstance.localization("CityReq"))
+            isValid = false
+        }
+        
+        if CountryID == "" {
+            Loader.showError(message: AppCommon.sharedInstance.localization("CountrtReq"))
+            isValid = false
+        }
+        
+        
+        if TXT_name.text! == "" {
+            Loader.showError(message: AppCommon.sharedInstance.localization("NameReq"))
+            isValid = false
+        }
+        return isValid
+    }
+    
+    
+    
+    
+}
+
+
+
+extension ProfileVC: HttpHelperDelegate {
+    func receivedResponse(dictResponse: Any, Tag: Int) {
+        print(dictResponse)
+        AppCommon.sharedInstance.dismissLoader(self.view)
+        let forbiddenMail : String = AppCommon.sharedInstance.localization("Duplicated user")
+        if Tag == 1 {
+            
+            let json = JSON(dictResponse)
+            let Result =  JSON(json["result"])
+            let message =  JSON(json["message"])
+            let status =  JSON(json["status"])
+            print(Result)
+            print(message)
+            print(status)
+            if status.stringValue == "400" {
+                vendorProfile = VendorProfileModel(userId: Result["userId"].stringValue, mobile:  Result["mobile"].stringValue, email:Result["email"].stringValue , rate:  Result["rate"].intValue, image:  Result["image"].stringValue, companyName:  Result["companyName"].stringValue, cityId:  Result["cityId"].stringValue, areaId:  Result["areaId"].stringValue, countryId:  Result["countryId"].stringValue, latitude:  Result["latitude"].stringValue, longitude:  Result["longitude"].stringValue, contactPerson:  Result["contactPerson"].stringValue)
+                
+                print(Result["mobile"].stringValue)
+                
+                if Result["countryId"].stringValue != "null" ||   Result["countryId"].stringValue != "" {
+                    CountryID = Result["countryId"].stringValue
+                    CityID =  Result["cityId"].stringValue
+                    AreaID =  Result["areaId"].stringValue
+                    loadCountryData()
+                    loadCityData(countryid: Result["countryId"].stringValue)
+                    loadAreaData(cityid:  Result["cityId"].stringValue)
+                    ComeFromSetData = true
+                }
+                print(countryArray.count)
+                SetData()
+                
+            } else {
+                
+                Loader.showError(message: (forbiddenMail))
+            }
+        }
+            
+        else if Tag == 2 {
+            
+            let json = JSON(dictResponse)
+            let Result =  JSON(json["result"])
+            let message =  JSON(json["message"])
+            let status =  JSON(json["status"])
+            print(Result)
+            print(message)
+            print(status)
+            countryArray.removeAll()
+            if status.stringValue == "201" {
+                let result =  json["result"].arrayValue
+                for json in result{
+                    let obj = CountryModel(id: json["id"].stringValue, nameAR:  json["nameAR"].stringValue, nameEN:  json["nameEN"].stringValue)
+                    countryArray.append(obj)
+                    
+                }
+                
+                if ComeFromSetData == true{
+                    print(countryArray.first{$0.id == CountryID}?.nameEN)
+                    
+                    if SharedData.SharedInstans.getLanguage() == "en"
+                    {
+                        TXTCountry.text = countryArray.first{$0.id == CountryID}?.nameEN
+                        
+                    }else
+                    {
+                        TXTCountry.text = countryArray.first{$0.id == CountryID}?.nameAR
+                    }
+                }
+                
+            } else {
+                
+                Loader.showError(message: (forbiddenMail))
+            }
+        }
+            
+        else if Tag == 3 {
+            
+            let json = JSON(dictResponse)
+            let Result =  JSON(json["result"])
+            let message =  JSON(json["message"])
+            let status =  JSON(json["status"])
+            print(Result)
+            print(message)
+            print(status)
+            if status.stringValue == "201" {
+                let result =  json["result"].arrayValue
+                for json in result{
+                    let obj = CityModel(id: json["id"].stringValue, nameAR:  json["nameAR"].stringValue, nameEN:  json["nameEN"].stringValue)
+                    CityArray.append(obj)
+                    
+                }
+                
+                if ComeFromSetData == true{
+                    print(CityArray.first{$0.id == CityID}?.nameEN)
+                    
+                    if SharedData.SharedInstans.getLanguage() == "en"
+                    {
+                        TXTCity.text = CityArray.first{$0.id == CityID}?.nameEN
+                        
+                    }else
+                    {
+                        TXTCity.text = CityArray.first{$0.id == CityID}?.nameAR
+                    }
+                }
+                
+                
+            } else {
+                
+                Loader.showError(message: (forbiddenMail))
+            }
+        }
+            
+        else if Tag == 4 {
+            
+            let json = JSON(dictResponse)
+            let Result =  JSON(json["result"])
+            let message =  JSON(json["message"])
+            let status =  JSON(json["status"])
+            print(Result)
+            print(message)
+            print(status)
+            if status.stringValue == "200" {
+                let result =  json["result"].arrayValue
+                for json in result{
+                    let obj = AreaModel(id: json["id"].stringValue, nameAR:  json["nameAR"].stringValue, nameEN:  json["nameEN"].stringValue)
+                    AreaArray.append(obj)
+                    
+                }
+                
+                if ComeFromSetData == true{
+                    ComeFromSetData = false
+                    print(AreaArray.first{$0.id == AreaID}?.nameEN)
+                    
+                    if SharedData.SharedInstans.getLanguage() == "en"
+                    {
+                        TXTArea.text = AreaArray.first{$0.id == AreaID}?.nameEN
+                        
+                    }else
+                    {
+                        TXTArea.text = AreaArray.first{$0.id == AreaID}?.nameAR
+                    }
+                }
+                
+            } else {
+                
+                Loader.showError(message: (forbiddenMail))
+            }
+        }
+        
+    }
+    
+    func receivedErrorWithStatusCode(statusCode: Int) {
+        print(statusCode)
+        AppCommon.sharedInstance.alert(title: "Error", message: "\(statusCode)", controller: self, actionTitle: AppCommon.sharedInstance.localization("ok"), actionStyle: .default)
+        
+        AppCommon.sharedInstance.dismissLoader(self.view)
+    }
+    
+    func retryResponse(numberOfrequest: Int) {
+        
+    }
 }

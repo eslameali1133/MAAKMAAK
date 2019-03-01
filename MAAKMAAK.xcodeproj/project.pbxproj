@@ -67,9 +67,16 @@
 		187BC7A0221458C40083C097 /* lang-ar.json in Resources */ = {isa = PBXBuildFile; fileRef = 187BC769221458C30083C097 /* lang-ar.json */; };
 		187BC7A22214DA9A0083C097 /* AMCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC7A12214DA9A0083C097 /* AMCircleImageView.swift */; };
 		187BC7A42214E74A0083C097 /* ChooseLocationToShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC7A32214E74A0083C097 /* ChooseLocationToShareViewController.swift */; };
+		18A3688C221C1D6000232126 /* CheckPhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3688B221C1D6000232126 /* CheckPhoneNumberVC.swift */; };
+		18A3688E221D488300232126 /* VenderProfileMOdel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3688D221D488300232126 /* VenderProfileMOdel.swift */; };
+		18A36890221EEC3100232126 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A3688F221EEC3100232126 /* About.storyboard */; };
+		18A36892221EEFBB00232126 /* ContactusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36891221EEFBB00232126 /* ContactusVC.swift */; };
+		18F3EDA1221AE780008F29F2 /* CarBrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3EDA0221AE780008F29F2 /* CarBrandModel.swift */; };
 		18F80A362215A1AE002AAFBC /* PickerDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F80A352215A1AE002AAFBC /* PickerDropdown.swift */; };
 		18F80A3A2215A4EC002AAFBC /* Country_Area_CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F80A392215A4EC002AAFBC /* Country_Area_CityModel.swift */; };
+		18FDDBF9221F3E9E00D99AAB /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDDBF8221F3E9E00D99AAB /* AboutVC.swift */; };
 		52C365343B7330D549DD5596 /* Pods_MAAKMAAK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECF4095C7EE059443F1CF87 /* Pods_MAAKMAAK.framework */; };
+		F49DB5EC2225C23000131DCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F49DB5EB2225C23000131DCD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,10 +146,18 @@
 		187BC769221458C30083C097 /* lang-ar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ar.json"; sourceTree = "<group>"; };
 		187BC7A12214DA9A0083C097 /* AMCircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMCircleImageView.swift; sourceTree = "<group>"; };
 		187BC7A32214E74A0083C097 /* ChooseLocationToShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLocationToShareViewController.swift; sourceTree = "<group>"; };
+		18A3688B221C1D6000232126 /* CheckPhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPhoneNumberVC.swift; sourceTree = "<group>"; };
+		18A3688D221D488300232126 /* VenderProfileMOdel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenderProfileMOdel.swift; sourceTree = "<group>"; };
+		18A3688F221EEC3100232126 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		18A36891221EEFBB00232126 /* ContactusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactusVC.swift; sourceTree = "<group>"; };
+		18F3EDA0221AE780008F29F2 /* CarBrandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrandModel.swift; sourceTree = "<group>"; };
 		18F80A352215A1AE002AAFBC /* PickerDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDropdown.swift; sourceTree = "<group>"; };
 		18F80A392215A4EC002AAFBC /* Country_Area_CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country_Area_CityModel.swift; sourceTree = "<group>"; };
+		18FDDBF8221F3E9E00D99AAB /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		1A399637E1C815F20BB83E69 /* Pods-MAAKMAAK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAAKMAAK.release.xcconfig"; path = "Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK.release.xcconfig"; sourceTree = "<group>"; };
 		6DB7DDEF4425873D8252547E /* Pods-MAAKMAAK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MAAKMAAK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK.debug.xcconfig"; sourceTree = "<group>"; };
+		F49DB5EA2225BC4500131DCD /* MAAKMAAK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MAAKMAAK.entitlements; sourceTree = "<group>"; };
+		F49DB5EB2225C23000131DCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FECF4095C7EE059443F1CF87 /* Pods_MAAKMAAK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAAKMAAK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,6 +214,8 @@
 		187BC70A221458800083C097 /* MAAKMAAK */ = {
 			isa = PBXGroup;
 			children = (
+				F49DB5EB2225C23000131DCD /* GoogleService-Info.plist */,
+				F49DB5EA2225BC4500131DCD /* MAAKMAAK.entitlements */,
 				0CA32107221635E500327566 /* Views */,
 				187BC75C221458C10083C097 /* AppDelegate.swift */,
 				187BC724221458BE0083C097 /* Info.plist */,
@@ -234,6 +251,7 @@
 				187BC726221458BF0083C097 /* LaunchScreen.storyboard */,
 				187BC727221458BF0083C097 /* HomeVender.storyboard */,
 				187BC728221458BF0083C097 /* Authstory.storyboard */,
+				18A3688F221EEC3100232126 /* About.storyboard */,
 			);
 			path = StoryBord;
 			sourceTree = "<group>";
@@ -376,6 +394,9 @@
 				187BC75A221458C10083C097 /* BrandsVC.swift */,
 				187BC75B221458C10083C097 /* RegisterViewController.swift */,
 				0CA321052214BF1700327566 /* RequestsVC.swift */,
+				18A3688B221C1D6000232126 /* CheckPhoneNumberVC.swift */,
+				18A36891221EEFBB00232126 /* ContactusVC.swift */,
+				18FDDBF8221F3E9E00D99AAB /* AboutVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -421,6 +442,8 @@
 			isa = PBXGroup;
 			children = (
 				18F80A392215A4EC002AAFBC /* Country_Area_CityModel.swift */,
+				18F3EDA0221AE780008F29F2 /* CarBrandModel.swift */,
+				18A3688D221D488300232126 /* VenderProfileMOdel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -469,6 +492,14 @@
 					187BC707221458800083C097 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -502,7 +533,9 @@
 				187BC79E221458C40083C097 /* Localizable.strings in Resources */,
 				187BC7A0221458C40083C097 /* lang-ar.json in Resources */,
 				0CA3210F2216389800327566 /* RequestCell.xib in Resources */,
+				18A36890221EEC3100232126 /* About.storyboard in Resources */,
 				187BC79B221458C40083C097 /* Assets.xcassets in Resources */,
+				F49DB5EC2225C23000131DCD /* GoogleService-Info.plist in Resources */,
 				187BC79F221458C40083C097 /* lang-en.json in Resources */,
 				187BC771221458C40083C097 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -621,6 +654,7 @@
 				187BC76D221458C40083C097 /* Ex+TableView.swift in Sources */,
 				187BC76A221458C40083C097 /* UIView.swift in Sources */,
 				187BC7A22214DA9A0083C097 /* AMCircleImageView.swift in Sources */,
+				18A3688C221C1D6000232126 /* CheckPhoneNumberVC.swift in Sources */,
 				187BC7A42214E74A0083C097 /* ChooseLocationToShareViewController.swift in Sources */,
 				187BC788221458C40083C097 /* APIConstants.swift in Sources */,
 				187BC780221458C40083C097 /* LocalizableTextField.swift in Sources */,
@@ -642,6 +676,7 @@
 				187BC76C221458C40083C097 /* UITextField.swift in Sources */,
 				187BC794221458C40083C097 /* ServiceDetailsVC.swift in Sources */,
 				187BC784221458C40083C097 /* LocalizableUISearchBar.swift in Sources */,
+				18A3688E221D488300232126 /* VenderProfileMOdel.swift in Sources */,
 				187BC78F221458C40083C097 /* ViewController.swift in Sources */,
 				18F80A3A2215A4EC002AAFBC /* Country_Area_CityModel.swift in Sources */,
 				187BC778221458C40083C097 /* Enum.swift in Sources */,
@@ -660,11 +695,14 @@
 				187BC797221458C40083C097 /* BrandsVC.swift in Sources */,
 				187BC799221458C40083C097 /* AppDelegate.swift in Sources */,
 				187BC776221458C40083C097 /* LocationHelper.swift in Sources */,
+				18FDDBF9221F3E9E00D99AAB /* AboutVC.swift in Sources */,
+				18F3EDA1221AE780008F29F2 /* CarBrandModel.swift in Sources */,
 				187BC774221458C40083C097 /* ServiceDetailsCell.swift in Sources */,
 				187BC791221458C40083C097 /* VerifyCodeVC.swift in Sources */,
 				187BC775221458C40083C097 /* LanguageManager.swift in Sources */,
 				187BC78D221458C40083C097 /* ProfileVC.swift in Sources */,
 				187BC77F221458C40083C097 /* Localizable.swift in Sources */,
+				18A36892221EEFBB00232126 /* ContactusVC.swift in Sources */,
 				187BC789221458C40083C097 /* DateView.swift in Sources */,
 				187BC77B221458C40083C097 /* DBController.swift in Sources */,
 				187BC79A221458C40083C097 /* SharedData.swift in Sources */,
@@ -812,13 +850,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MAAKMAAK/MAAKMAAK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 828KJ8U374;
 				INFOPLIST_FILE = MAAKMAAK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EslamAmaakmaak.MAAKMAAK;
+				PRODUCT_BUNDLE_IDENTIFIER = EslamAlimaakmaak.MAAKMAAK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -832,13 +872,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MAAKMAAK/MAAKMAAK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 828KJ8U374;
 				INFOPLIST_FILE = MAAKMAAK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EslamAmaakmaak.MAAKMAAK;
+				PRODUCT_BUNDLE_IDENTIFIER = EslamAlimaakmaak.MAAKMAAK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

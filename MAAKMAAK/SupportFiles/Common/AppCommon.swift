@@ -54,8 +54,23 @@ class AppCommon: UIViewController {
         controller.UserID = UserID
         controller.UserType = userType
         controller.mobile = Mobile
+        controller.FalgComeFromRegister = true
         vc.navigationController?.pushViewController(controller, animated: true)
     }
+    func ShowHome() {
+        let sb = UIStoryboard(name: "HomeVender", bundle: nil)
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.window?.rootViewController = sb.instantiateInitialViewController()
+    }
+    
+    func showlogin(vc: UIViewController) {
+        let sb = UIStoryboard(name: "Authstory", bundle: nil)
+        let controller = sb.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        
+        vc.navigationController?.pushViewController(controller, animated: true)    }
+    
+    
+    
 //
 //    func showLogin(vc: UIViewController) {
 //        let sb = UIStoryboard(name: "Login", bundle: nil)
