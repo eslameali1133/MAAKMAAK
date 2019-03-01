@@ -52,13 +52,10 @@ class HttpHelper{
     
     public  func Get(url:String,parameters:Parameters=[:],Tag:Int , headers:HTTPHeaders){
         
-        
         request(url: url, method: .get, parameters: parameters, tag: Tag,header: headers)
     }
     
     public  func GetWithoutHeader(url:String,parameters:Parameters=[:],Tag:Int ){
-        
-        
         request(url: url, method: .get, parameters: parameters, tag: Tag,header: nil)
     }
     

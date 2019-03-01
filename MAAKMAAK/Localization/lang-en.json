@@ -101,17 +101,18 @@
               "Welcom" : "Welcome",
            "EnterPhoneTOSendSMS" :   "Enter Phone to send sms",
            "MobileNotExit" :   "Mobile Number Not Exit ",
-           
-           
-          
+           "accept":"Accept",
+           "reject":"Reject",
+           "More":"More",
+           "Name":"Name :",
+           "Brand":"Brand :",
+           "Service":"Service :",
+           "Date":"Date :",
+           "Price":"Price",
          
        
        
      
-    
-    
-    
-
 }
 
 

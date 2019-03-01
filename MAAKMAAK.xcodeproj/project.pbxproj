@@ -12,6 +12,18 @@
 		0CA3210B2216360100327566 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA321092216360100327566 /* HeaderView.swift */; };
 		0CA3210E2216389800327566 /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3210C2216389800327566 /* RequestCell.swift */; };
 		0CA3210F2216389800327566 /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CA3210D2216389800327566 /* RequestCell.xib */; };
+		1806893C22247CD0002BBA30 /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806893B22247CD0002BBA30 /* RoundedCornerButton.swift */; };
+		1807AB412221E5A9005449B1 /* RequestsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807AB402221E5A9005449B1 /* RequestsModel.swift */; };
+		1807AB452223424D005449B1 /* MoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807AB442223424D005449B1 /* MoreDetailsVC.swift */; };
+		18088831221DBC4C00AC08F6 /* RequestProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1808882F221DBC4C00AC08F6 /* RequestProgressCell.swift */; };
+		18088832221DBC4C00AC08F6 /* RequestProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18088830221DBC4C00AC08F6 /* RequestProgressCell.xib */; };
+		18088835221DBC7600AC08F6 /* RequestInvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18088833221DBC7600AC08F6 /* RequestInvoiceCell.swift */; };
+		18088836221DBC7600AC08F6 /* RequestInvoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18088834221DBC7600AC08F6 /* RequestInvoiceCell.xib */; };
+		18601353221EEF8100D77266 /* RequestDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18601352221EEF8100D77266 /* RequestDetailsVC.swift */; };
+		18601356221F031F00D77266 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18601355221F031F00D77266 /* CardView.swift */; };
+		18601358221F042900D77266 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18601357221F042900D77266 /* Extension.swift */; };
+		1860135A221F120300D77266 /* InvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18601359221F120300D77266 /* InvoiceCell.swift */; };
+		1860135C221F1CCA00D77266 /* RequestInProgressDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860135B221F1CCA00D77266 /* RequestInProgressDetailsVC.swift */; };
 		187BC76A221458C40083C097 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC71E221458BD0083C097 /* UIView.swift */; };
 		187BC76B221458C40083C097 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC71F221458BD0083C097 /* UIColor.swift */; };
 		187BC76C221458C40083C097 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187BC720221458BD0083C097 /* UITextField.swift */; };
@@ -80,6 +92,18 @@
 		0CA321092216360100327566 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0CA3210C2216389800327566 /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
 		0CA3210D2216389800327566 /* RequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCell.xib; sourceTree = "<group>"; };
+		1806893B22247CD0002BBA30 /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
+		1807AB402221E5A9005449B1 /* RequestsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsModel.swift; sourceTree = "<group>"; };
+		1807AB442223424D005449B1 /* MoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsVC.swift; sourceTree = "<group>"; };
+		1808882F221DBC4C00AC08F6 /* RequestProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProgressCell.swift; sourceTree = "<group>"; };
+		18088830221DBC4C00AC08F6 /* RequestProgressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestProgressCell.xib; sourceTree = "<group>"; };
+		18088833221DBC7600AC08F6 /* RequestInvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInvoiceCell.swift; sourceTree = "<group>"; };
+		18088834221DBC7600AC08F6 /* RequestInvoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestInvoiceCell.xib; sourceTree = "<group>"; };
+		18601352221EEF8100D77266 /* RequestDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsVC.swift; sourceTree = "<group>"; };
+		18601355221F031F00D77266 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		18601357221F042900D77266 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		18601359221F120300D77266 /* InvoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceCell.swift; sourceTree = "<group>"; };
+		1860135B221F1CCA00D77266 /* RequestInProgressDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInProgressDetailsVC.swift; sourceTree = "<group>"; };
 		187BC708221458800083C097 /* MAAKMAAK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAAKMAAK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187BC71E221458BD0083C097 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		187BC71F221458BD0083C097 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -165,10 +189,16 @@
 		0CA32107221635E500327566 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18601354221F02F700D77266 /* subviews */,
 				0CA321092216360100327566 /* HeaderView.swift */,
 				0CA321082216360100327566 /* HeaderView.xib */,
 				0CA3210C2216389800327566 /* RequestCell.swift */,
 				0CA3210D2216389800327566 /* RequestCell.xib */,
+				1808882F221DBC4C00AC08F6 /* RequestProgressCell.swift */,
+				18088830221DBC4C00AC08F6 /* RequestProgressCell.xib */,
+				18088833221DBC7600AC08F6 /* RequestInvoiceCell.swift */,
+				18088834221DBC7600AC08F6 /* RequestInvoiceCell.xib */,
+				18601359221F120300D77266 /* InvoiceCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +210,15 @@
 				1A399637E1C815F20BB83E69 /* Pods-MAAKMAAK.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		18601354221F02F700D77266 /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				18601355221F031F00D77266 /* CardView.swift */,
+				1806893B22247CD0002BBA30 /* RoundedCornerButton.swift */,
+			);
+			path = subviews;
 			sourceTree = "<group>";
 		};
 		187BC6FF221458800083C097 = {
@@ -258,6 +297,7 @@
 				187BC74A221458C00083C097 /* DateView.swift */,
 				187BC74B221458C00083C097 /* Country */,
 				18F80A352215A1AE002AAFBC /* PickerDropdown.swift */,
+				18601357221F042900D77266 /* Extension.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -381,6 +421,9 @@
 				187BC75B221458C10083C097 /* RegisterViewController.swift */,
 				0CA321052214BF1700327566 /* RequestsVC.swift */,
 				18A3688B221C1D6000232126 /* CheckPhoneNumberVC.swift */,
+				18601352221EEF8100D77266 /* RequestDetailsVC.swift */,
+				1860135B221F1CCA00D77266 /* RequestInProgressDetailsVC.swift */,
+				1807AB442223424D005449B1 /* MoreDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -427,6 +470,7 @@
 			children = (
 				18F80A392215A4EC002AAFBC /* Country_Area_CityModel.swift */,
 				18F3EDA0221AE780008F29F2 /* CarBrandModel.swift */,
+				1807AB402221E5A9005449B1 /* RequestsModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -504,10 +548,12 @@
 			files = (
 				187BC772221458C40083C097 /* HomeVender.storyboard in Resources */,
 				187BC773221458C40083C097 /* Authstory.storyboard in Resources */,
+				18088832221DBC4C00AC08F6 /* RequestProgressCell.xib in Resources */,
 				0CA3210A2216360100327566 /* HeaderView.xib in Resources */,
 				187BC79E221458C40083C097 /* Localizable.strings in Resources */,
 				187BC7A0221458C40083C097 /* lang-ar.json in Resources */,
 				0CA3210F2216389800327566 /* RequestCell.xib in Resources */,
+				18088836221DBC7600AC08F6 /* RequestInvoiceCell.xib in Resources */,
 				187BC79B221458C40083C097 /* Assets.xcassets in Resources */,
 				187BC79F221458C40083C097 /* lang-en.json in Resources */,
 				187BC771221458C40083C097 /* LaunchScreen.storyboard in Resources */,
@@ -525,7 +571,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
@@ -533,6 +579,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IBLocalizable/IBLocalizable.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/KKPinCodeTextField/KKPinCodeTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/PinCodeTextField/PinCodeTextField.framework",
@@ -554,6 +601,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBLocalizable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KKPinCodeTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinCodeTextField.framework",
@@ -566,7 +614,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A221041FE8A5DD60E29964E /* [CP] Check Pods Manifest.lock */ = {
@@ -599,7 +647,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
@@ -614,7 +662,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MAAKMAAK/Pods-MAAKMAAK-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -626,19 +674,25 @@
 			files = (
 				187BC76D221458C40083C097 /* Ex+TableView.swift in Sources */,
 				187BC76A221458C40083C097 /* UIView.swift in Sources */,
+				18088831221DBC4C00AC08F6 /* RequestProgressCell.swift in Sources */,
+				18601353221EEF8100D77266 /* RequestDetailsVC.swift in Sources */,
 				187BC7A22214DA9A0083C097 /* AMCircleImageView.swift in Sources */,
 				18A3688C221C1D6000232126 /* CheckPhoneNumberVC.swift in Sources */,
 				187BC7A42214E74A0083C097 /* ChooseLocationToShareViewController.swift in Sources */,
 				187BC788221458C40083C097 /* APIConstants.swift in Sources */,
 				187BC780221458C40083C097 /* LocalizableTextField.swift in Sources */,
 				187BC78E221458C40083C097 /* ForgetPasswordVC.swift in Sources */,
+				18088835221DBC7600AC08F6 /* RequestInvoiceCell.swift in Sources */,
 				187BC785221458C40083C097 /* LocalizableLabel.swift in Sources */,
 				18F80A362215A1AE002AAFBC /* PickerDropdown.swift in Sources */,
 				187BC786221458C40083C097 /* LocalizableUIBarItem.swift in Sources */,
 				187BC782221458C40083C097 /* LocalizableButton.swift in Sources */,
+				18601358221F042900D77266 /* Extension.swift in Sources */,
 				0CA3210E2216389800327566 /* RequestCell.swift in Sources */,
 				187BC779221458C40083C097 /* Loader.swift in Sources */,
+				1806893C22247CD0002BBA30 /* RoundedCornerButton.swift in Sources */,
 				187BC798221458C40083C097 /* RegisterViewController.swift in Sources */,
+				1860135A221F120300D77266 /* InvoiceCell.swift in Sources */,
 				187BC76B221458C40083C097 /* UIColor.swift in Sources */,
 				187BC79D221458C40083C097 /* HttpHelper.swift in Sources */,
 				187BC77D221458C40083C097 /* AppCommon.swift in Sources */,
@@ -651,6 +705,7 @@
 				187BC784221458C40083C097 /* LocalizableUISearchBar.swift in Sources */,
 				187BC78F221458C40083C097 /* ViewController.swift in Sources */,
 				18F80A3A2215A4EC002AAFBC /* Country_Area_CityModel.swift in Sources */,
+				1807AB452223424D005449B1 /* MoreDetailsVC.swift in Sources */,
 				187BC778221458C40083C097 /* Enum.swift in Sources */,
 				0CA3210B2216360100327566 /* HeaderView.swift in Sources */,
 				187BC781221458C40083C097 /* LocalizableTextView.swift in Sources */,
@@ -671,6 +726,8 @@
 				187BC774221458C40083C097 /* ServiceDetailsCell.swift in Sources */,
 				187BC791221458C40083C097 /* VerifyCodeVC.swift in Sources */,
 				187BC775221458C40083C097 /* LanguageManager.swift in Sources */,
+				18601356221F031F00D77266 /* CardView.swift in Sources */,
+				1807AB412221E5A9005449B1 /* RequestsModel.swift in Sources */,
 				187BC78D221458C40083C097 /* ProfileVC.swift in Sources */,
 				187BC77F221458C40083C097 /* Localizable.swift in Sources */,
 				187BC789221458C40083C097 /* DateView.swift in Sources */,
@@ -678,6 +735,7 @@
 				187BC79A221458C40083C097 /* SharedData.swift in Sources */,
 				187BC78A221458C40083C097 /* Countries.swift in Sources */,
 				187BC795221458C40083C097 /* moreVC.swift in Sources */,
+				1860135C221F1CCA00D77266 /* RequestInProgressDetailsVC.swift in Sources */,
 				187BC783221458C40083C097 /* LocalizableNavigationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,6 +879,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VLFZLKJTRV;
 				INFOPLIST_FILE = MAAKMAAK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -841,6 +900,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VLFZLKJTRV;
 				INFOPLIST_FILE = MAAKMAAK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

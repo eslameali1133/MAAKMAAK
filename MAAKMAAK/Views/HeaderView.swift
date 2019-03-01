@@ -20,6 +20,12 @@ class HeaderView: UITableViewHeaderFooterView {
         return UINib(nibName: identifier, bundle: nil)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+//        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
+        // Initialization code
+    }
+    
     static var identifier: String {
         return String(describing: self)
     }

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestProgressCell" rowHeight="124" id="KGk-i7-Jjw" customClass="RequestProgressCell" customModule="MAAKMAAK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="123"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="122.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgp-Rj-s17">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="122.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pU7-sQ-NWW">
+                                <rect key="frame" x="8" y="8" width="93.5" height="68.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptb-iX-Mgb">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-44-FQA">
+                                        <rect key="frame" x="0.0" y="17" width="45" height="17.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="service type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY6-EU-esW">
+                                        <rect key="frame" x="0.0" y="34.5" width="93.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZW-f5-QKw">
+                                        <rect key="frame" x="0.0" y="51.5" width="38" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pvB-j6-VlP">
+                                <rect key="frame" x="8" y="84.5" width="358" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpY-tV-Dv5" customClass="RoundedCornerButton" customModule="MAAKMAAK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.67364418510000001" blue="0.0055736009960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="LZP-0y-KVl"/>
+                                        </constraints>
+                                        <state key="normal" title="More">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="More"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2r-tT-FaM">
+                                <rect key="frame" x="342" y="8" width="24" height="24"/>
+                                <state key="normal" image="telephone"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pvB-j6-VlP" secondAttribute="bottom" constant="8" id="1aI-m3-hol"/>
+                            <constraint firstItem="pU7-sQ-NWW" firstAttribute="leading" secondItem="Pgp-Rj-s17" secondAttribute="leading" constant="8" id="7ZI-8b-lQl"/>
+                            <constraint firstAttribute="trailing" secondItem="pvB-j6-VlP" secondAttribute="trailing" constant="8" id="MnS-XT-vRT"/>
+                            <constraint firstItem="pvB-j6-VlP" firstAttribute="leading" secondItem="Pgp-Rj-s17" secondAttribute="leading" constant="8" id="YHY-6R-7rq"/>
+                            <constraint firstAttribute="trailing" secondItem="S2r-tT-FaM" secondAttribute="trailing" constant="8" id="kaF-Ri-Fmq"/>
+                            <constraint firstItem="S2r-tT-FaM" firstAttribute="top" secondItem="Pgp-Rj-s17" secondAttribute="top" constant="8" id="tPS-Ai-naJ"/>
+                            <constraint firstItem="pU7-sQ-NWW" firstAttribute="top" secondItem="Pgp-Rj-s17" secondAttribute="top" constant="8" id="xHZ-OW-hWh"/>
+                            <constraint firstItem="pvB-j6-VlP" firstAttribute="top" secondItem="pU7-sQ-NWW" secondAttribute="bottom" constant="8" id="y93-Eq-Fz9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pgp-Rj-s17" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0HB-58-x3Y"/>
+                    <constraint firstItem="Pgp-Rj-s17" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Bee-BD-O4G"/>
+                    <constraint firstAttribute="trailing" secondItem="Pgp-Rj-s17" secondAttribute="trailing" id="lVY-ch-5Gk"/>
+                    <constraint firstAttribute="bottom" secondItem="Pgp-Rj-s17" secondAttribute="bottom" id="vfd-WQ-K3O"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblBrand" destination="aOO-44-FQA" id="FoS-9x-yQy"/>
+                <outlet property="lblName" destination="Ptb-iX-Mgb" id="oLH-qw-8Uu"/>
+                <outlet property="lblServiceType" destination="bY6-EU-esW" id="AwH-iT-o1Q"/>
+                <outlet property="lblTime" destination="DZW-f5-QKw" id="DhK-rC-YM4"/>
+            </connections>
+            <point key="canvasLocation" x="96" y="93.103448275862078"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="telephone" width="24" height="24"/>
+    </resources>
+</document>

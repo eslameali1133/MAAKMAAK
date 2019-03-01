@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6144B865869576FB75039525DB479A7E"
+               BlueprintIdentifier = "EA2346E57D7F3D667D51649546A6AC26"
                BlueprintName = "KKPinCodeTextField"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "KKPinCodeTextField.framework">

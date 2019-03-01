@@ -13,6 +13,7 @@ class RequestCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblBrand: UILabel!
     @IBOutlet weak var lblServiceType: UILabel!
+    
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var btnAccept: UIButton!
     @IBOutlet weak var btnShow: UIButton!
@@ -28,6 +29,13 @@ class RequestCell: UITableViewCell {
         self.lblServiceType.text = req.service
         self.lblTime.text = req.time
         
+    }
+    static var nib:UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
