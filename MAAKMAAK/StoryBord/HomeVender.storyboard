@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="A.Jannat.LT.Bold.ttf">
+        <array key="AJannatLTBold.ttf">
             <string>AJannatLT-Bold</string>
         </array>
     </customFonts>
@@ -552,12 +552,11 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fox" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-c0-D0O" customClass="customImageView" customModule="MAAKMAAK" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="officePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-c0-D0O" customClass="customImageView" customModule="MAAKMAAK" customModuleProvider="target">
                                                 <rect key="frame" x="18" y="642.5" width="319.5" height="180"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-de-ocp">
                                                 <rect key="frame" x="18" y="642.5" width="319.5" height="180"/>
-                                                <state key="normal" image="officePlaceholder-1"/>
                                                 <connections>
                                                     <action selector="openMapToShareLocation:" destination="TRg-6h-TgO" eventType="touchUpInside" id="Udj-RU-8Nb"/>
                                                 </connections>
@@ -1401,7 +1400,6 @@
         <image name="backBtn" width="16" height="16"/>
         <image name="car" width="625" height="476"/>
         <image name="customer-support" width="485.05264282226562" height="485.05264282226562"/>
-        <image name="fox" width="960" height="958"/>
         <image name="homeAc" width="18.399999618530273" height="18.399999618530273"/>
         <image name="homeNot" width="18.399999618530273" height="18.399999618530273"/>
         <image name="man" width="151.08197021484375" height="151.08197021484375"/>
@@ -1409,7 +1407,7 @@
         <image name="manprofilehom" width="96" height="96"/>
         <image name="more" width="18" height="18"/>
         <image name="more (1)" width="18" height="18"/>
-        <image name="officePlaceholder-1" width="512" height="512"/>
+        <image name="officePlaceholder" width="512" height="512"/>
         <image name="receipt" width="46.311557769775391" height="46.311557769775391"/>
         <image name="settings" width="18" height="18"/>
         <image name="support (1)" width="96" height="96"/>

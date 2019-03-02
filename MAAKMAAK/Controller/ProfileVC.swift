@@ -235,7 +235,7 @@ class ProfileVC: MYViewController,UIImagePickerControllerDelegate,UINavigationCo
         let Lng = Long
         let staticMapUrl: String = "http://maps.google.com/maps/api/staticmap?markers=color:red|\(Lat),\(Lng)&\("zoom=17&size=\(2 * Int(MapImageView.frame.size.width))x\(2 * Int(MapImageView.frame.size.height))")&sensor=true"
         
-        let mapul = "https://maps.google.com/maps/api/staticmap?key=AIzaSyBIoI3T5929aAQVlIDsW5XsGzir5BjRfqo&markers=color:red|\(Lat),\(Lng)&\("zoom=17&size=\(2 * Int(MapImageView.frame.size.width))x\(2 * Int(MapImageView.frame.size.height))")&sensor=true&fbclid=IwAR2rsCS0d9D-aow4D3AWs9-fv3EdiSDsFFUU80Gm6oQ7vCZwlXUaPjUOmU8"
+        let mapul = "https://maps.google.com/maps/api/staticmap?key=AIzaSyB-3KGui1I1wguVGxALFNa5cld4ijK8fS4&markers=color:red|\(Lat),\(Lng)&\("zoom=17&size=\(2 * Int(MapImageView.frame.size.width))x\(2 * Int(MapImageView.frame.size.height))")&sensor=true&fbclid=IwAR2rsCS0d9D-aow4D3AWs9-fv3EdiSDsFFUU80Gm6oQ7vCZwlXUaPjUOmU8"
         
         let urlI = URL(string: mapul.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         if let url = urlI {

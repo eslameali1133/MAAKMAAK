@@ -10,6 +10,7 @@ import UIKit
 import GooglePlaces
 import GooglePlacePicker
 import GoogleMaps
+import CoreLocation
 
 class ChooseLocationToShareViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var BtnmapType: UIButton!
@@ -45,6 +46,7 @@ class ChooseLocationToShareViewController: UIViewController, CLLocationManagerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      locationManager.requestWhenInUseAuthorization()
         confirmSearchBtn.isHidden = true
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
@@ -52,6 +54,8 @@ class ChooseLocationToShareViewController: UIViewController, CLLocationManagerDe
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+     
       mapView.mapType = .satellite
         if mapView.mapType == .satellite {
             BtnmapType.setImage(#imageLiteral(resourceName: "Group_1404"), for: .normal)

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
 
     var window: UIWindow?
 let applicationl = UIApplication.shared
-      let googleMapsApiKey = "AIzaSyBIoI3T5929aAQVlIDsW5XsGzir5BjRfqo"
+      let googleMapsApiKey = "AIzaSyB-3KGui1I1wguVGxALFNa5cld4ijK8fS4"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -66,19 +66,49 @@ let applicationl = UIApplication.shared
         print("Failed to register: \(error)")
     }
     
-    
+    func MoveToProfile(){
+        
+    }
+    func MoveToRequest(){
+        
+    }
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
-        // Print message ID.
-        if let aps = userInfo["aps"] as? NSDictionary {
-            let alert = aps["alert"] as? NSDictionary
-            let title = alert?["title"] as? String
-            let body = alert?["body"] as? String
+       var type = ""
+        print(userInfo)
+        type = (userInfo["NotificationType"] as? String)!
+        if type == "0"
+        {
+            print(userInfo["Active"]!)
+            
+            if (userInfo["Active"] as? String)! == "true"
+            {
+                SharedData.SharedInstans.SetIsActive(true)
+            }else{
+                SharedData.SharedInstans.SetIsActive(false)
+            }
+            
+            MoveToProfile()
+        }
+        else if type == "1"{
+            // move to home
+            
+        }else if type == "2"{
+            // come prder
+            var orderid = (userInfo["OrderId"] as? String)!
+            // OrderId
+            //            MoveToRequest()
+        }
+        else if type == "3"{
+            var orderid = (userInfo["OrderId"] as? String)!
+            // cancel order
+            //            MoveToRequest()
+        }
+        else
+        {
             
         }
-        
-        
-        print(userInfo)
+
         // Print full message.
         print(userInfo)
         completionHandler()
@@ -92,6 +122,42 @@ let applicationl = UIApplication.shared
       
         print(userInfo)
         print("Run code to download content")
+        
+        
+        print(userInfo)
+        type = (userInfo["NotificationType"] as? String)!
+
+        if type == "0"
+        {
+            print(userInfo["Active"]!)
+            
+            if (userInfo["Active"] as? String)! == "true"
+            {
+                 SharedData.SharedInstans.SetIsActive(true)
+            }else{
+                 SharedData.SharedInstans.SetIsActive(false)
+            }
+           
+          
+        }else if type == "1"{
+           // move to home
+            
+        }else if type == "2"{
+            // come prder
+            var orderid = (userInfo["OrderId"] as? String)!
+            // OrderId
+//            MoveToRequest()
+        }
+        else if type == "3"{
+               var orderid = (userInfo["OrderId"] as? String)!
+            // cancel order
+//            MoveToRequest()
+        }
+        else
+        {
+
+        }
+
         completionHandler([.alert,.badge,.sound])
     }
     
