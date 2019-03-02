@@ -28,9 +28,14 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app will use camera</string>
+	<string>This app will use camera to upload car imges or profile image</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>You can select photo</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+   
+	<string>To Get your location for emergency services </string>
+	<key></key>
+	<string></string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
