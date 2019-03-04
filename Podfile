@@ -27,7 +27,8 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Messaging'
 pod 'Firebase/Storage'
-
-
-
+pod 'DropDown'
+pod 'ImageSlideshow'
+pod 'Kingfisher'
+pod 'ImageSlideshow/Kingfisher'
 end

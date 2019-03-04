@@ -20,16 +20,22 @@ class HeaderView: UITableViewHeaderFooterView {
         return UINib(nibName: identifier, bundle: nil)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
+        // Initialization code
+    }
+    
     static var identifier: String {
         return String(describing: self)
     }
     
     @objc private func didTapHeader() {
-        delegate?.toggleSection(header: self, section: section)
+//        delegate?.toggleSection(header: self, section: section)
     }
     
     func setCollapsed(collapsed: Bool){
-        arrowLabel?.rotate(collapsed ? 0.0 : .pi)
+//        arrowLabel?.rotate(collapsed ? 0.0 : .pi)
     }
 }
 extension UIView {

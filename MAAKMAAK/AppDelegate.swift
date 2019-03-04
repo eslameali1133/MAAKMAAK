@@ -13,6 +13,7 @@ import Firebase
 import GooglePlaces
 import GoogleMaps
 import LocalAuthentication
+import DropDown
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate, MessagingDelegate {
 
@@ -25,7 +26,7 @@ let applicationl = UIApplication.shared
         IQKeyboardManager.shared.enable = true
         GMSServices.provideAPIKey(googleMapsApiKey)
         GMSPlacesClient.provideAPIKey(googleMapsApiKey)
-        
+        DropDown.startListeningToKeyboard()
         FirebaseApp.configure()
         
         if #available(iOS 10.0, *) {

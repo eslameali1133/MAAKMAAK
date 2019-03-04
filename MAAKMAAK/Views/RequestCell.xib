@@ -19,32 +19,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="370" height="143.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djV-Z7-tsd">
-                        <rect key="frame" x="0.0" y="0.0" width="370" height="143.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djV-Z7-tsd" customClass="CardView" customModule="MAAKMAAK" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="354" height="127.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LR8-Za-uTG">
-                                <rect key="frame" x="8" y="8" width="93.5" height="82"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LR8-Za-uTG">
+                                <rect key="frame" x="8" y="8" width="93.5" height="73.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x17-rv-ciG">
-                                        <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="12.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn4-Hk-UfE">
-                                        <rect key="frame" x="0.0" y="20.5" width="45" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="45" height="12.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="service type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKt-gR-5t4">
-                                        <rect key="frame" x="0.0" y="41" width="93.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="41" width="93.5" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZK-u5-6mW">
-                                        <rect key="frame" x="0.0" y="61.5" width="38" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="61" width="38" height="12.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,42 +52,57 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-fW-aj4">
-                                <rect key="frame" x="8" y="98" width="354" height="37.5"/>
+                                <rect key="frame" x="8" y="89.5" width="338" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnc-UY-sa6">
-                                        <rect key="frame" x="0.0" y="0.0" width="116" height="37.5"/>
-                                        <color key="backgroundColor" red="1" green="0.67364418510000001" blue="0.0055736009960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnc-UY-sa6" customClass="RoundedCornerButton" customModule="MAAKMAAK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="110.5" height="30"/>
+                                        <color key="backgroundColor" red="0.23643894626551759" green="0.52882905417892534" blue="0.12389896113863345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="accept">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="cancel"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="accept"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="_cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnSelect:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2eC-tU-T4s"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLj-qZ-dqs">
-                                        <rect key="frame" x="119" y="0.0" width="116" height="37.5"/>
-                                        <color key="backgroundColor" red="1" green="0.67364418510000001" blue="0.0055736009960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLj-qZ-dqs" customClass="RoundedCornerButton" customModule="MAAKMAAK" customModuleProvider="target">
+                                        <rect key="frame" x="113.5" y="0.0" width="111" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="reject">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="cancel"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="reject"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="_cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnReject:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5FT-in-9RO"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AU3-1k-h86">
-                                        <rect key="frame" x="238" y="0.0" width="116" height="37.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AU3-1k-h86" customClass="RoundedCornerButton" customModule="MAAKMAAK" customModuleProvider="target">
+                                        <rect key="frame" x="227.5" y="0.0" width="110.5" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.67364418510000001" blue="0.0055736009960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="More">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="cancel"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="More"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="_cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0C-Py-Ejx">
-                                <rect key="frame" x="338" y="8" width="24" height="24"/>
+                                <rect key="frame" x="322" y="8" width="24" height="24"/>
                                 <state key="normal" image="telephone"/>
                             </button>
                         </subviews>
@@ -105,10 +120,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="djV-Z7-tsd" secondAttribute="trailing" id="ArC-dN-WW5"/>
-                    <constraint firstItem="djV-Z7-tsd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aSQ-bn-GVf"/>
-                    <constraint firstItem="djV-Z7-tsd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pal-oS-kzu"/>
-                    <constraint firstAttribute="bottom" secondItem="djV-Z7-tsd" secondAttribute="bottom" id="tmB-Iy-ySS"/>
+                    <constraint firstAttribute="trailing" secondItem="djV-Z7-tsd" secondAttribute="trailing" constant="8" id="ArC-dN-WW5"/>
+                    <constraint firstItem="djV-Z7-tsd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="aSQ-bn-GVf"/>
+                    <constraint firstItem="djV-Z7-tsd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="pal-oS-kzu"/>
+                    <constraint firstAttribute="bottom" secondItem="djV-Z7-tsd" secondAttribute="bottom" constant="8" id="tmB-Iy-ySS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

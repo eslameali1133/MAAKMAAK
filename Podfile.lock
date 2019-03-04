@@ -84,7 +84,14 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
   - IBLocalizable (1.3.0)
+  - ImageSlideshow (1.7.0):
+    - ImageSlideshow/Core (= 1.7.0)
+  - ImageSlideshow/Core (1.7.0)
+  - ImageSlideshow/Kingfisher (1.7.0):
+    - ImageSlideshow/Core
+    - Kingfisher (> 3.0)
   - IQKeyboardManagerSwift (6.2.0)
+  - Kingfisher (5.1.0)
   - KKPinCodeTextField (1.0.0)
   - leveldb-library (1.20)
   - Localize-Swift (2.0.0)
@@ -111,7 +118,10 @@ DEPENDENCIES:
   - GooglePlacePicker
   - GooglePlaces
   - IBLocalizable
+  - ImageSlideshow
+  - ImageSlideshow/Kingfisher
   - IQKeyboardManagerSwift
+  - Kingfisher
   - KKPinCodeTextField
   - Localize-Swift
   - PinCodeTextField
@@ -140,7 +150,9 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - IBLocalizable
+    - ImageSlideshow
     - IQKeyboardManagerSwift
+    - Kingfisher
     - KKPinCodeTextField
     - leveldb-library
     - Localize-Swift
@@ -171,7 +183,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   IBLocalizable: bebcf04d98f422a2544f2b000d19387dfe8c317b
+  ImageSlideshow: f8eec5e37a980f60923b585ff23b0e140fd24018
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  Kingfisher: fcec238063d17404fca89bf0a850583211c4cbf6
   KKPinCodeTextField: 63a1fb841fd6a412cf664ef64dc065fc6767bd3c
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
@@ -182,6 +196,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 6db9eb9e83590e989c0f2c851da00f3df767360d
+PODFILE CHECKSUM: c0919ce89d6919626345b611c956e2951ff548e7
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0
